@@ -5,10 +5,14 @@ import { routeConstants } from "../../constants/routeConstant";
 import { downloadFile } from "../../utils/commonFunction";
 import { CV_URL } from "../../constants/propertyReslover";
 import logo from "../../assets/img/logo/logo.png";
+import PdfViewerModal from "../../common/pdfViewer/PdfViewer";
 
 export default function Header() {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
   const headerRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const toggle = () => setShowModal(!showModal);
 
   const menuItems = [
     { label: "Home", route: routeConstants.HOME, id: "home" },
@@ -61,28 +65,52 @@ export default function Header() {
     ));
 
   const renderDownloadButton = (isMobile = false) => (
-    <button
-      className="primary__btn download__btn"
-      onClick={() => downloadFile(CV_URL, "vivek_resume.pdf")}
-    >
-      <svg
-        className="download__btn--svg"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+    <>
+      <button
+        className="secondary__btn download__btn d-flex align-items-center justify-content-center gap-2"
+        onClick={toggle}
       >
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-        <polyline points="7 10 12 15 17 10"></polyline>
-        <line x1="12" y1="15" x2="12" y2="3"></line>
-      </svg>
-      Download CV
-    </button>
+        <svg
+          className="view__btn--svg"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        View CV
+      </button>
+
+      <button
+        className="primary__btn download__btn"
+        onClick={() => downloadFile(CV_URL, "vivek_resume.pdf")}
+      >
+        <svg
+          className="download__btn--svg"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download CV
+      </button>
+    </>
   );
 
   return (
@@ -174,6 +202,16 @@ export default function Header() {
             </nav>
           </div>
         </div>
+      )}
+      {showModal && (
+        <PdfViewerModal
+          showModal={showModal}
+          toggle={toggle}
+          isDownload={true}
+          title={"CV View"}
+          fileUrl= "https://drive.google.com/file/d/1xCxwj7C-KF1PIBAaEwhxz0f5RUCNyOhT/preview"
+          isIframeShow={true}
+        />
       )}
     </>
   );
