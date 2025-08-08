@@ -2,9 +2,21 @@ import React from "react";
 import "./service.scss";
 import ServiceCard from "./ServiceCard";
 import { SERVICE_LIST } from "../../constants/propertyReslover";
-export default function Service() {
+import DetailPageHeader from "../header/DetailPageHeader";
+export default function Service({isHomePage}) {
   return (
     <>
+      {!isHomePage && (
+        <>
+          <DetailPageHeader />
+          <div class="page__heading">
+            <h1 className="page__heading--title">MY SERVICES</h1>
+            <h2 className="page__heading--subtitle">
+              MY <span>SERVICES</span>
+            </h2>
+          </div>
+        </>
+      )}
       <section className="services__section section--padding" id="servives">
         <div className="container">
           <div className="section__heading--topbar d-flex align-items-center justify-content-between mb-50">

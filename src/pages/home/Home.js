@@ -13,14 +13,15 @@ import ScrollUp from "../../common/scrollUp/ScrollUp";
 export default function Home() {
   return (
     <div>
+      <Header />
       <main className="main__content_wrapper">
-        <Hero />
-        <Service />
-        <AboutMe />
-        <ExpericnceEducation />
+        <Hero  isHomePage={true}/>
+        <Service  isHomePage={true}/>
+        <AboutMe  isHomePage={true}/>
+        <ExpericnceEducation  isHomePage={true}/>
         <Skill />
         {/* <Portfolio /> */}
-        <Contact />
+        <Contact isHomePage={true}/>
         <Footer />
         {/* <ScrollUp /> */}
       </main>

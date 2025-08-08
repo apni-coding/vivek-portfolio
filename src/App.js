@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/home/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -10,12 +15,28 @@ import Header from "./pages/header/Header";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Service from "./pages/service/Service";
 import AboutMe from "./pages/aboutMe/AboutMe";
+import Loader from "./common/loader/Loader";
+import { useEffect, useState } from "react";
 
 function App() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(true);
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setClosing(false);
+    const timer = setTimeout(() => {
+      setClosing(true);
+      setTimeout(() => setLoading(false), 500); // Wait for closeDoor animation
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [location?.pathname]);
   return (
-    <Router>
+    <>
       <ScrollUp />
-      <Header />
+      {loading && <Loader closing={closing} />}
       <Routes>
         <Route path={routeConstants.HOME} element={<Home />} />
         <Route path={routeConstants.ABOUT_ME} element={<AboutMe />} />
@@ -23,7 +44,7 @@ function App() {
         <Route path={routeConstants.PORTFOLIO_LIST} element={<Portfolio />} />
         <Route path={routeConstants.CONTACT_US} element={<Contact />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

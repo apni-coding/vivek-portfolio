@@ -68,7 +68,10 @@ export default function Header() {
     <>
       <button
         className="secondary__btn download__btn d-flex align-items-center justify-content-center gap-2"
-        onClick={toggle}
+        onClick={()=>{
+          toggle()
+          setIsOffcanvasOpen(false)
+        }}
       >
         <svg
           className="view__btn--svg"

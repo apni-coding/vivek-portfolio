@@ -1,9 +1,28 @@
 import React from "react";
 import "./contact.scss";
-export default function Contact() {
+import DetailPageHeader from "../header/DetailPageHeader";
+export default function Contact({ isHomePage }) {
   return (
     <>
-      <section className="contact__section contact__section--bg" id="contact">
+      {!isHomePage && (
+        <>
+          <DetailPageHeader />
+          <div class="page__heading">
+            <h1 className="page__heading--title">CONTACT ME</h1>
+            <h2 className="page__heading--subtitle">
+              CONTACT <span>ME</span>
+            </h2>
+          </div>
+        </>
+      )}
+      <section
+        className={`${
+          isHomePage
+            ? "contact__section contact__section--bg"
+            : "contact__section contact__page--style section--padding"
+        }`}
+        id="contact"
+      >
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -12,7 +31,9 @@ export default function Contact() {
                   <span className="section__heading--subtitle text__secondary">
                     CONTACT
                   </span>
-                  <h2 className="section__heading--title mb-10">Get in Touch </h2>
+                  <h2 className="section__heading--title mb-10">
+                    Get in Touch{" "}
+                  </h2>
                   <p className="section__heading--desc">
                     Have a project in mind or just want to connect? Feel free to
                     reach out via phone, email, or the contact form below.

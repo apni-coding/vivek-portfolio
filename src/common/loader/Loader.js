@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import "./loader.scss";
 
-export default function Loader() {
+export default function Loader({ closing }) {
   return (
-    <div>
-      
+    <div id="preloader" className={closing ? "closing" : ""}>
+      <div className="loader--border"></div>
     </div>
-  )
+  );
 }

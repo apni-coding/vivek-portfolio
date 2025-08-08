@@ -2,14 +2,30 @@ import React from "react";
 import "./aboutMe.scss";
 import about from "../../assets/img/other/about.png";
 import { calculateTotalExperience } from "../../utils/commonFunction";
-export default function AboutMe() {
-    const totalExperience = calculateTotalExperience("2023-08-16", true);
-  
+import DetailPageHeader from "../header/DetailPageHeader";
+export default function AboutMe({ isHomePage }) {
+  const totalExperience = calculateTotalExperience("2023-08-16", true);
+
   return (
     <>
+      {!isHomePage && (
+        <>
+          <DetailPageHeader />
+          <div class="page__heading">
+            <h1 className="page__heading--title">ABOUT ME</h1>
+            <h2 className="page__heading--subtitle">
+              ABOUT <span>ME</span>
+            </h2>
+          </div>
+        </>
+      )}
       <section
-        className="about__section about__section--bg section--padding"
         id="about"
+        className={`${
+          isHomePage
+            ? "about__section about__section--bg section--padding"
+            : "contact__section contact__page--style section--padding"
+        }`}
       >
         <div className="container">
           <div className="about__section--inner d-flex">
@@ -32,9 +48,13 @@ export default function AboutMe() {
                   <li className="about__info--items">Age: 25 Years</li>
                   <li className="about__info--items">Nationality: Indian</li>
                   <li className="about__info--items">Freelance: Available</li>
-                  <li className="about__info--items">Languages: English, Hindi</li>
+                  <li className="about__info--items">
+                    Languages: English, Hindi
+                  </li>
                   <li className="about__info--items">Phone: +91-7292932052</li>
-                  <li className="about__info--items w-100">Email: vivek7292932052@gmail.com</li>
+                  <li className="about__info--items w-100">
+                    Email: vivek7292932052@gmail.com
+                  </li>
                 </ul>
                 <a className="about__btn primary__btn" href="#">
                   Hire Me
@@ -46,7 +66,9 @@ export default function AboutMe() {
                 <img className="position__relative" src={about} alt="img" />
               </div>
               <div className="about__experience text-center">
-                <h4 className="about__experience--title title-stroke">{totalExperience}+</h4>
+                <h4 className="about__experience--title title-stroke">
+                  {totalExperience}+
+                </h4>
                 <span className="about__experience--subtitle">
                   Experience Working
                 </span>

@@ -2,6 +2,8 @@ import React from "react";
 import "./hero.scss";
 import { SOCIAL_MEDIA_LINKS } from "../../constants/propertyReslover";
 import { calculateTotalExperience } from "../../utils/commonFunction";
+import { Link } from "react-router-dom";
+import { routeConstants } from "../../constants/routeConstant";
 export default function Hero() {
   const totalExperience = calculateTotalExperience("2023-08-16");
 
@@ -74,9 +76,9 @@ export default function Hero() {
                 apps.
               </p>
               <div className="hero__content--footer d-flex align-items-center">
-                <a className="btn hero__content--btn" href="#">
+                <Link className="btn hero__content--btn" to={routeConstants.ABOUT_ME}>
                   About Me
-                </a>
+                </Link>
                 <div className="social__share d-flex align-items-center">
                   <span className="social__share--title">Follow Me: </span>
                   <ul className="social__share--wrapper d-flex">
