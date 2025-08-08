@@ -1,4 +1,8 @@
-export const CV_URL = "https://drive.google.com/file/d/1xCxwj7C-KF1PIBAaEwhxz0f5RUCNyOhT/view?usp=sharing";
+import okuBg from "../assets/img/other/oku.png"
+import askUtecBg from "../assets/img/other/askutec.jpg"
+
+export const CV_URL =
+  "https://drive.google.com/file/d/1xCxwj7C-KF1PIBAaEwhxz0f5RUCNyOhT/view?usp=sharing";
 
 export const SOCIAL_MEDIA_LINKS = {
   YOUTUBE: "https://www.youtube.com/channel/UCeFHr8q8fDrgQt4d3EFEKIw",
@@ -225,7 +229,45 @@ export const SKILLS = [
   },
   {
     name: "AWS (Lambda, S3, Cognito)",
-    proficiency:60,
+    proficiency: 60,
+  },
+];
+
+export const PROJECT_LIST = [
+  {
+    id: 1,
+    name: "askUtec by UltraTech",
+    bgImg: askUtecBg,
+    shortDescription: "Social media & booking platform for UltraTech dealers and customers.",
+    category: ["web", "development"],
+  },
+  {
+    id: 2,
+    name: "Coolant Management System",
+    bgImg: null,
+    shortDescription: "IoT dashboard for real-time coolant tracking and analysis.",
+    category: ["web", "iot"],
+  },
+  {
+    id: 3,
+    name: "OKU Mobile App",
+    bgImg:okuBg,
+    shortDescription: "Personalized healthcare app with AI-driven recommendations.",
+    category: ["mobile", "healthcare"],
+  },
+  {
+    id: 4,
+    name: "Smart Inventory Manager",
+    bgImg: null,
+    shortDescription: "Cloud inventory tool with barcode scanning and stock alerts.",
+    category: ["web", "inventory"],
+  },
+  {
+    id: 5,
+    name: "TravelMate Booking App",
+    bgImg: null,
+    shortDescription: "Travel booking app with AI-generated itineraries.",
+    category: ["mobile", "travel"],
   },
 ];
 

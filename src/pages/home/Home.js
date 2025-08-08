@@ -20,7 +20,7 @@ export default function Home() {
         <AboutMe  isHomePage={true}/>
         <ExpericnceEducation  isHomePage={true}/>
         <Skill />
-        {/* <Portfolio /> */}
+        <Portfolio isHomePage={true}/>
         <Contact isHomePage={true}/>
         <Footer />
         {/* <ScrollUp /> */}

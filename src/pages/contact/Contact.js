@@ -16,9 +16,14 @@ export default function Contact({ isHomePage }) {
         </>
       )}
       <section
+        // className={`${
+        //   isHomePage
+        //     ? "contact__section contact__section--bg"
+        //     : "contact__section contact__page--style section--padding"
+        // }`}
         className={`${
           isHomePage
-            ? "contact__section contact__section--bg"
+            ? "contact__section contact__page--style section--padding"
             : "contact__section contact__page--style section--padding"
         }`}
         id="contact"
