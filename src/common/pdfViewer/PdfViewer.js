@@ -12,7 +12,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 export default function PdfViewerModal({
   showModal,
   toggle,
-  fileUrl = "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf",
+  fileUrl,
   isDownload = false,
   title,
   isIframeShow = false,
