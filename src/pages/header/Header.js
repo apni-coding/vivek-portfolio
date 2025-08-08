@@ -1,12 +1,27 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import { routeConstants } from "../../constants/routeConstant";
 import { downloadFile } from "../../utils/commonFunction";
 import { CV_URL } from "../../constants/propertyReslover";
 import logo from "../../assets/img/logo/logo.png";
+
 export default function Header() {
-    const headerRef = useRef(null);
+  const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
+  const headerRef = useRef(null);
+
+  const menuItems = [
+    { label: "Home", route: routeConstants.HOME, id: "home" },
+    { label: "About", route: routeConstants.ABOUT_ME, id: "about" },
+    { label: "Service", route: routeConstants.SERVICE_LIST, id: "services" },
+    {
+      label: "Portfolio",
+      route: routeConstants.PORTFOLIO_LIST,
+      id: "portfolio",
+    },
+    // { label: "Blog", route: routeConstants.BLOG, id: "blog" }, // optional
+    { label: "Contact", route: routeConstants.CONTACT_US, id: "contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +35,60 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const renderMenuLinks = (isMobile = false) =>
+    menuItems.map((item) => (
+      <li
+        key={item.id}
+        className={isMobile ? "offcanvas__menu_li" : "header__menu--items"}
+      >
+        {isMobile ? (
+          <Link
+            className="offcanvas__menu_item"
+            to={item.route}
+            onClick={() => setIsOffcanvasOpen(false)}
+          >
+            {item.label}
+          </Link>
+        ) : (
+          <Link className="header__menu--link" to={item.route}>
+            {item.label}
+          </Link>
+        )}
+      </li>
+    ));
+
+  const renderDownloadButton = (isMobile = false) => (
+    <button
+      className="primary__btn download__btn"
+      onClick={() => downloadFile(CV_URL, "vivek_resume.pdf")}
+    >
+      <svg
+        className="download__btn--svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Download CV
+    </button>
+  );
+
   return (
     <>
-      <header className="header__section  header__transparent">
+      {/* Desktop Header */}
+      <header className="header__section header__transparent">
         <div className="header__sticky" ref={headerRef}>
           <div className="container">
             <div className="main__header d-flex justify-content-between align-items-center">
@@ -36,22 +99,23 @@ export default function Header() {
                       className="main__logo--img logo_light"
                       src={logo}
                       alt="logo-img"
-                      style={{height:"50px", width:"157px"}}
+                      style={{ height: "50px", width: "157px" }}
                     />
                     <img
                       className="main__logo--img logo_dark"
                       src={logo}
                       alt="logo-img"
-                       style={{height:"50px", width:"157px"}}
+                      style={{ height: "50px", width: "157px" }}
                     />
                   </Link>
                 </h1>
               </div>
-              <div className="offcanvas__header--menu__open ">
-                <Link
+
+              {/* Mobile Menu Button */}
+              <div className="offcanvas__header--menu__open">
+                <div
                   className="offcanvas__header--menu__open--btn"
-                  to={routeConstants.HOME}
-                  data-offcanvas
+                  onClick={() => setIsOffcanvasOpen(true)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -61,99 +125,56 @@ export default function Header() {
                     <path
                       fill="currentColor"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-miterlimit="10"
-                      stroke-width="32"
+                      strokeLinecap="round"
+                      strokeMiterlimit="10"
+                      strokeWidth="32"
                       d="M80 160h352M80 256h352M80 352h352"
                     />
                   </svg>
                   <span className="visually-hidden">Offcanvas Menu Open</span>
-                </Link>
+                </div>
               </div>
+
+              {/* Desktop Menu */}
               <div className="main__header--right d-flex align-items-center d-none d-lg-block">
                 <div className="header__menu menu_border--none">
                   <nav className="header__menu--navigation">
                     <ul className="header__menu--wrapper d-flex">
-                      <li className="header__menu--items">
-                        <Link
-                          className="header__menu--link"
-                          to={routeConstants.HOME}
-                        >
-                          Home
-                        </Link>
-                      </li>
-                      <li className="header__menu--items">
-                        <Link
-                          className="header__menu--link"
-                          to={routeConstants.ABOUT_ME}
-                        >
-                          About{" "}
-                        </Link>
-                      </li>
-                      <li className="header__menu--items">
-                        <Link
-                          className="header__menu--link"
-                          to={routeConstants.SERVICE_LIST}
-                        >
-                          Service{" "}
-                        </Link>
-                      </li>
-                      <li className="header__menu--items">
-                        <Link
-                          className="header__menu--link"
-                          to={routeConstants.PORTFOLIO_LIST}
-                        >
-                          Portfolio{" "}
-                        </Link>
-                      </li>
-                      {/* <li className="header__menu--items">
-                        <Link
-                          className="header__menu--link"
-                          to={routeConstants.HOME}
-                        >
-                          Blog
-                        </Link>
-                      </li> */}
-                      <li className="header__menu--items">
-                        <Link
-                          className="header__menu--link"
-                          to={routeConstants.CONTACT_US}
-                        >
-                          Contact{" "}
-                        </Link>
-                      </li>
+                      {renderMenuLinks(false)}
                     </ul>
                   </nav>
                 </div>
-                <button
-                  className="primary__btn download__btn"
-                  onClick={() => {
-                    downloadFile(CV_URL, "vivek_resume.pdf");
-                  }}
-                >
-                  <svg
-                    className="download__btn--svg"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                  Download CV
-                </button>
+                {renderDownloadButton(false)}
               </div>
             </div>
           </div>
         </div>
       </header>
+
+      {/* Mobile Offcanvas Menu */}
+      {isOffcanvasOpen && (
+        <div className="offcanvas__header open">
+          <div className="offcanvas__inner">
+            <div className="offcanvas__logo">
+              <Link className="offcanvas__logo_link" to={routeConstants.HOME}>
+                <img src={logo} alt="Logo-img" width="158" height="36" />
+              </Link>
+              <button
+                className="offcanvas__close--btn"
+                onClick={() => setIsOffcanvasOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+            <nav className="offcanvas__menu">
+              <ul className="offcanvas__menu_ul">{renderMenuLinks(true)}</ul>
+              <div className="offcanvas__download--btn">
+                {renderDownloadButton(true)}
+              </div>
+            </nav>
+          </div>
+        </div>
+      )}
     </>
   );
 }
