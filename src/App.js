@@ -17,6 +17,7 @@ import Service from "./pages/service/Service";
 import AboutMe from "./pages/aboutMe/AboutMe";
 import Loader from "./common/loader/Loader";
 import { useEffect, useState } from "react";
+import ProjectDetails from "./pages/projectDetails/ProjectDetails";
 
 function App() {
   const location = useLocation();
@@ -43,6 +44,7 @@ function App() {
         <Route path={routeConstants.SERVICE_LIST} element={<Service />} />
         <Route path={routeConstants.PORTFOLIO_LIST} element={<Portfolio />} />
         <Route path={routeConstants.CONTACT_US} element={<Contact />} />
+
       </Routes>
     </>
   );
