@@ -306,8 +306,12 @@ export const PROJECT_LIST = [
         "/images/askUtec/booking.png",
         "/images/askUtec/profile.png",
       ],
-      repoLink: "https://github.com/yourusername/askutec",
-      liveDemoLink: "https://github.com/apni-coding/reactjstutorial",
+      repoInfo: {
+        // gitHubOwner:"apni-coding",
+        // repoName:"vivek-portfolio",
+        // branchName:"main"
+      },
+      liveDemoLink: "https://utecbyultratech.com/",
       conclusion: `The platform successfully improved communication and booking efficiency between dealers and customers, resulting in a 30% increase in booking speed and positive client feedback.`,
     },
   },

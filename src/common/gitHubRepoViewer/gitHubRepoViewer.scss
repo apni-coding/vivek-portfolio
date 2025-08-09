@@ -1,0 +1,32 @@
+.repo-viewer-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.file-tree {
+  width: 250px;
+  border-right: 1px solid #ddd;
+}
+
+.folder {
+  cursor: pointer;
+  color: blue;
+}
+
+.file {
+  cursor: pointer;
+  color: black;
+}
+
+.back-btn {
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+}
+
+.loading-text {
+  padding: 20px;
+  color: white;
+  text-align: center;
+}

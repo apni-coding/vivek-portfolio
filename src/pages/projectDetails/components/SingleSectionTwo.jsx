@@ -11,13 +11,17 @@ import SingleServicesMainImg from "../../../assets/img/other/projectbg.jpeg";
 import { Link } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import PdfViewerModal from "../../../common/pdfViewer/PdfViewer";
+import GitHubRepoViewer from "../../../common/gitHubRepoViewer/GitHubRepoViewer";
 
 const SingleSectionTwo = ({ projectInfo }) => {
   const [counted, setCounted] = useState(false);
   const countersRef = useRef([]);
   const [isModalShow, setIsModalShow] = useState(false);
+  const [isGithubModalShow, setIsGithubModalShow] = useState(false);
 
   const toggleModal = () => setIsModalShow(!isModalShow);
+  const toggleGithubModal = ()=> setIsGithubModalShow(!isGithubModalShow)
+
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -64,7 +68,6 @@ const SingleSectionTwo = ({ projectInfo }) => {
               className="single-services-main-img "
               src={SingleServicesMainImg}
               alt="single-services-main-img"
-              
             />
           </div>
           <div className="row overflow-hidden ">
@@ -192,6 +195,18 @@ const SingleSectionTwo = ({ projectInfo }) => {
                     </p>
                   </div>
                 )}
+                {projectInfo?.repoInfo?.gitHubOwner && (
+                  <div className="project-details-main">
+                    <p className="project-details-sub-text">Source Code:</p>
+                    <p
+                      className="development"
+                      style={{ cursor: "pointer" }}
+                      onClick={toggleGithubModal}
+                    >
+                      Click Here
+                    </p>
+                  </div>
+                )}
               </div>
               <div
                 className="other-services-main other-services-main2"
@@ -259,6 +274,15 @@ const SingleSectionTwo = ({ projectInfo }) => {
           isDownload={false}
           title={projectInfo?.title}
           isIframeShow={true}
+        />
+      )}
+      {isGithubModalShow && (
+        <GitHubRepoViewer
+          modalOpen={isGithubModalShow}
+          toggleModal={toggleGithubModal}
+          gitHubOwner={projectInfo?.repoInfo?.gitHubOwner}
+          repoName={projectInfo?.repoInfo?.repoName}
+          branchName={projectInfo?.repoInfo?.branchName}
         />
       )}
     </>
