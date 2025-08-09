@@ -49,7 +49,7 @@
   }
 
   .my-services {
-    padding-top: 100px;
+    padding-top: 10%;
   }
 
   .freelance-text2 {
@@ -85,6 +85,11 @@
     // top: -160px;
     border-radius: 30px;
     max-width: 100%;
+    height: 600px;
+    width: 1360px;
+     @media only screen and (max-width: 991px) {
+        height: 400px;
+    }
   }
 
   .build {
@@ -100,7 +105,6 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
-    margin-bottom: 30px;
   }
 
   .nunc-text2 {
@@ -139,7 +143,7 @@
   }
 
   .single-service-list {
-    padding-top: 20px;
+    // padding-top: 20px;
     // margin-bottom: 100px;
   }
 
@@ -398,3 +402,4 @@
     border-bottom: 1px solid #63636385;
   }
 }
+

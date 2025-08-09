@@ -6,21 +6,25 @@ import AOS from "aos";
 
 import SinglePortfolioImg1 from "../../../assets/img/banner/bg-shape1.png";
 import SinglePortfolioImg2 from "../../../assets/img/banner/bg-shape1.png";
-import SingleServicesMainImg from "../../../assets/img/banner/bg-shape1.png";
-
+import SingleServicesMainImg from "../../../assets/img/other/projectbg.jpeg";
 
 import { Link } from "react-router-dom";
+import { Col, Row } from "reactstrap";
+import PdfViewerModal from "../../../common/pdfViewer/PdfViewer";
 
-const SingleSectionTwo = () => {
+const SingleSectionTwo = ({ projectInfo }) => {
   const [counted, setCounted] = useState(false);
   const countersRef = useRef([]);
+  const [isModalShow, setIsModalShow] = useState(false);
+
+  const toggleModal = () => setIsModalShow(!isModalShow);
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
 
     const handleScroll = () => {
       if (countersRef.current.length > 0) {
-        const oTop = countersRef.current[0].offsetTop - window.innerHeight;
+        const oTop = countersRef.current[0]?.offsetTop - window.innerHeight;
         if (!counted && window.scrollY > oTop) {
           countersRef.current.forEach((counter) => {
             const updateCount = () => {
@@ -53,7 +57,6 @@ const SingleSectionTwo = () => {
   }, [counted]);
   return (
     <>
-      {/* <!-- ================== Single Portfolio Section Two ===============================--> */}
       <section className="section-two-my-services">
         <div className="container">
           <div className="single-services-img-main bike" data-aos="fade-up">
@@ -61,116 +64,97 @@ const SingleSectionTwo = () => {
               className="single-services-main-img "
               src={SingleServicesMainImg}
               alt="single-services-main-img"
+              
             />
           </div>
           <div className="row overflow-hidden ">
             <div className="col-xxl-8 col-xl-8 col-lg-8 ">
               <h2 className="build" data-aos="fade-up">
-                Delivering Better Business News With an Improved User
-                Experience.
+                {projectInfo?.detailedIntro?.heading}
               </h2>
               <p className="nunc-text mattis" data-aos="fade-up">
-                Ullamcorper nunc mattis volutpat volutpat sed natoque eget
-                fermentum. Tortor rhoncus nisl purus cras pharetra sit
-                adipiscing. Amet vel blandit dolor neque malesuada venenatis
-                morbi tincidunt lorem. Lorem vulputate id in risus adipiscing
-                lectus enim. Semper et velit risus arcu in dapibus turpis
-                scelerisque. Et nunc id tristique a pharetra accumsan magna.
-                Nibh quis tellus sit integer luctus.
+                {projectInfo?.detailedIntro?.paragraph1}
               </p>
               <p className="nunc-text" data-aos="fade-up">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Placeat qui ducimus illum modi? perspiciatis sit amet accusamus
-                soluta perferendis, ad illum, nesciunt, reiciendis iusto et
-                cupidit Repudiandae provident to odio nisi consectetur,
-                sapiente, libero iure necessitatibus corporis nulla voluptate,
-                quisquam aut perspiciatis? quis lor Fugiat labore aspernatur
-                eius, perspiciatis ut molestiae, delectus rem quis lor Fugiat
-                labore aspernatur eius.
+                {projectInfo?.detailedIntro?.paragraph2}
               </p>
               <h2 className="sed" data-aos="fade-up">
-                Overview
+                Role & Responsibilities
               </h2>
               <p className="nunc-text" data-aos="fade-up">
-                Ullamcorper nunc mattis volutpat volutpat sed natoque eget
-                fermentum. Tortor rhoncus nisl purus cras pharetra sit
-                adipiscing. Amet vel blandit dolor neque malesuada venenatis
-                morbi tincidunt lorem. Lorem vulputate id in risus adipiscing
-                lectus enim. Semper et velit risus arcu in dapibus turpis
-                scelerisque. Et nunc id tristique a pharetra accumsan magna.
+                {projectInfo?.roleAndResponsibilities?.shortDescription}
               </p>
               <ul className="single-service-list" data-aos="fade-up">
-                <li>
-                  Ullamcorper nunc mattis volutpat volutpat sed natoque eget
-                  fermentum.
-                </li>
-                <li>Tortor rhoncus nisl purus cras pharetra sit adipiscing.</li>
-                <li>
-                  Amet vel blandit dolor neque malesuada venenatis morbi
-                  tincidunt lorem.
-                </li>
-                <li>Lorem vulputate id in risus adipiscing lectus enim.</li>
-                <li>
-                  Semper et velit risus arcu in dapibus turpis scelerisque.
-                </li>
-                <li>Et nunc id tristique a pharetra accumsan magna.</li>
+                {projectInfo?.roleAndResponsibilities?.roleList?.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
-              <div className="overview-imgs-main">
-                <img
-                  src={SinglePortfolioImg1}
-                  alt="single-portfolio-over-img1"
-                  style={{width:"350px", height:"350px"}}
-                />
-                <img
-                  src={SinglePortfolioImg2}
-                  alt="single-portfolio-over-img2"
-                  style={{width:"350px", height:"350px"}}
+              <Row>
+                <Col xs={12} md={8} lg={9}>
+                  <h2 className="sed" data-aos="fade-up">
+                    Features
+                  </h2>
+                  <ul className="single-service-list" data-aos="fade-up">
+                    {projectInfo?.features?.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Col>
+                <Col xs={12} md={4} lg={3}>
+                  <h2 className="sed" data-aos="fade-up">
+                    Tech Stack
+                  </h2>
+                  <ul className="single-service-list" data-aos="fade-up">
+                    {projectInfo?.technologiesUsed?.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Col>
+              </Row>
 
-                />
-              </div>
-              <h2 className="sed" id="sed" data-aos="fade-up">
-                My Process for Creative Features
-              </h2>
-              <div className="features-percentage-main counter">
-                <h2
-                  className="features-percent count"
-                  data-count="120"
-                  ref={(el) => (countersRef.current[0] = el)}
-                >
-                  0
-                </h2>
-                <p className="fetures-month">Months Project Duration</p>
-              </div>
-              <div className="features-percentage-main counter features-percentage-main2">
-                <h2
-                  className="features-percent count"
-                  data-count="45"
-                  ref={(el) => (countersRef.current[1] = el)}
-                >
-                  0
-                </h2>
-                <p className="fetures-month">Average daily signups</p>
-              </div>
-              <div className="features-percentage-main counter features-percentage-main2">
-                <h2
-                  className="features-percent count"
-                  data-count="300"
-                  ref={(el) => (countersRef.current[2] = el)}
-                >
-                  0
-                </h2>
-                <p className="fetures-month">Growth After Work</p>
-              </div>
+              <Row>
+                <Col xs={12} md={12} lg={12}>
+                  <h2 className="sed" data-aos="fade-up">
+                    Challenges & Solutions
+                  </h2>
+                  <ul className="single-service-list" data-aos="fade-up">
+                    {projectInfo?.challengesAndSolutions?.map((item, i) => (
+                      <li key={i} className={`d-flex ${i == 0 ? "" : "mt-4"}`}>
+                        <div>
+                          <strong className="text-white me-2">
+                            Challenge:
+                          </strong>{" "}
+                          <span>{item?.challenge}</span> <br />
+                          <strong className="text-white me-2">
+                            Solution:
+                          </strong>{" "}
+                          <span>{item?.solution}</span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </Col>
+                <Col xs={12} md={12} lg={12}>
+                  <h2 className="sed" data-aos="fade-up">
+                    Key Learning
+                  </h2>
+                  <ul className="single-service-list" data-aos="fade-up">
+                    {projectInfo?.keyLearnings?.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Col>
+              </Row>
+
               <h2 className="sed" data-aos="fade-up">
                 Conclusion
               </h2>
-              <p className="nunc-text" data-aos="fade-up">
-                Ullamcorper nunc mattis volutpat volutpat sed natoque eget
-                fermentum. Tortor rhoncus nisl purus cras pharetra sit
-                adipiscing. Amet vel blandit dolor neque malesuada venenatis
-                morbi tincidunt lorem. Lorem vulputate id in risus adipiscing
-                lectus enim. Semper et velit risus arcu in dapibus turpis
-                scelerisque. Et nunc id tristique a pharetra accumsan magna.
+              <p
+                className="nunc-text"
+                data-aos="fade-up"
+                style={{ marginBottom: "80px" }}
+              >
+                {projectInfo?.conclusion}
               </p>
             </div>
             <div className="col-xxl-4 col-xl-4 col-lg-4 overflow-hidden">
@@ -181,31 +165,40 @@ const SingleSectionTwo = () => {
                 <p className="other-services">Project Details</p>
                 <div className="project-details-main pt-0">
                   <p className="project-details-sub-text">Category:</p>
-                  <p className="development">Development</p>
+                  <p className="development">{projectInfo?.category}</p>
                 </div>
-                <div className="project-details-main">
-                  <p className="project-details-sub-text">Software:</p>
-                  <p className="development">WordPress, Figma</p>
-                </div>
-                <div className="project-details-main">
-                  <p className="project-details-sub-text">Service:</p>
-                  <p className="development">Development</p>
-                </div>
+
                 <div className="project-details-main">
                   <p className="project-details-sub-text">Client:</p>
-                  <p className="development">Eunice Mills</p>
+                  <p className="development">{projectInfo?.client}</p>
                 </div>
                 <div className="project-details-main border-0">
                   <p className="project-details-sub-text">Date:</p>
-                  <p className="development">October 6, 2024</p>
+                  <p className="development">
+                    {projectInfo?.projectTimeline?.startDate} to{" "}
+                    {projectInfo?.projectTimeline?.endDate}
+                  </p>
                 </div>
+
+                {projectInfo?.liveDemoLink && (
+                  <div className="project-details-main">
+                    <p className="project-details-sub-text">View Demo:</p>
+                    <p
+                      className="development"
+                      style={{ cursor: "pointer" }}
+                      onClick={toggleModal}
+                    >
+                      Click Here
+                    </p>
+                  </div>
+                )}
               </div>
               <div
                 className="other-services-main other-services-main2"
                 data-aos="fade-left"
               >
                 <div className="call-svg-main">
-                  <Link to="tel:+(1)2345678899">
+                  <Link to="tel:+917292932052">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="48"
@@ -250,7 +243,7 @@ const SingleSectionTwo = () => {
                   </p>
                   <p className="call-anytime">CALL ANYTIME</p>
                   <div className="call-anytime-btn">
-                    <Link to="tel:+(1)2345678899">+(1) 234 567 8899</Link>
+                    <Link to="tel:+917292932052">+91-7292932052</Link>
                   </div>
                 </div>
               </div>
@@ -258,7 +251,16 @@ const SingleSectionTwo = () => {
           </div>
         </div>
       </section>
-      {/* <!-- ================== Single Portfolio Section Two End ===============================--> */}
+      {isModalShow && (
+        <PdfViewerModal
+          showModal={isModalShow}
+          toggle={toggleModal}
+          fileUrl={projectInfo?.liveDemoLink}
+          isDownload={false}
+          title={projectInfo?.title}
+          isIframeShow={true}
+        />
+      )}
     </>
   );
 };

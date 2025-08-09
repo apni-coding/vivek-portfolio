@@ -5,6 +5,6 @@ export const routeConstants = {
   ABOUT_ME:`/${modulePath.ABOUT}`,
   SERVICE_LIST:`/${modulePath.SERVICE}`,
   PORTFOLIO_LIST:`/${modulePath.PORTFOLIO}`,
-  CONTACT_US:`/${modulePath.CONTACT}`
-
+  CONTACT_US:`/${modulePath.CONTACT}`,
+  PORTFOLIO_DETAIL: `/${modulePath.PORTFOLIO}/detail`
 };

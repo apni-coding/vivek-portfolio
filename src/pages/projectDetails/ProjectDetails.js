@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import SectionHeadingContent from "./components/SectionHedingContent";
 import SingleSectionTwo from "./components/SingleSectionTwo";
@@ -6,18 +6,38 @@ import "./projectDetail.scss";
 import "aos/dist/aos.css";
 import Header from "../header/Header";
 import DetailPageHeader from "../header/DetailPageHeader";
+import { useParams } from "react-router-dom";
+import { PROJECT_LIST } from "../../constants/propertyReslover";
 const ProjectDetails = () => {
+  const params = useParams();
+  console.log(params);
+  const [projectInfo, setProjectInfo] = useState({});
+
+  useEffect(() => {
+    if (params?.id) {
+      const projectId = Number(params?.id);
+      const singleProjectInfo = PROJECT_LIST.find(
+        (item) => item.id === projectId
+      );
+      setProjectInfo(singleProjectInfo?.projectInfo);
+    }
+  }, [params?.id]);
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
+  }, []);
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme-color", "dark");
   }, []);
   return (
     <>
       {/* <Loader /> */}
       <Header />
       <div className="project-detail-wrapper overflow-hidden">
-        <SectionHeadingContent />
+        <SectionHeadingContent projectInfo={projectInfo}/>
 
-        <SingleSectionTwo />
+        <SingleSectionTwo projectInfo={projectInfo}/>
       </div>
     </>
   );

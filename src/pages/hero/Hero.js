@@ -21,7 +21,7 @@ export default function Hero() {
               />
               <img
                 className="hero__thumbnail--media dark_img"
-                src={require("../../assets/img/hero/hero-man-dark.png")}
+                src={require("../../assets/img/hero/hero-thumbnail.png")}
                 alt="img"
               />
               <div className="projects__budget d-flex align-items-center">

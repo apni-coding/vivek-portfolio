@@ -1,28 +1,22 @@
 import React from "react";
 
-const SectionHeadingContent = () => {
+const SectionHeadingContent = ({ projectInfo }) => {
+  console.log(projectInfo);
   return (
     <>
-      {/* <!-- ====================================== single portfolio Section One ===================================== --> */}
-      <div className="section-main " >
+      <div className="section-main ">
         <div className="container">
           <p className="main-text my-services" data-aos="fade-down">
             MY WORK
           </p>
           <h1 className="ui-ux" data-aos="fade-down">
-            Unique Product Design
+            {projectInfo?.title}
           </h1>
           <p className="Freelance freelance-text2" data-aos="fade-down">
-            Ullamcorper nunc mattis volutpat volutpat sed natoque eget
-            fermentum. Tortor rhoncus nisl purus cras pharetra sit adipiscing.
-            Amet vel blandit dolor neque malesuada venenatis morbi tincidunt
-            lorem. Lorem vulputate id in risus adipiscing lectus enim. Semper et
-            velit risus arcu in dapibus turpis scelerisque. Et nunc id tristique
-            a pharetra accumsan magna. Nibh quis tellus sit integer luctus.
+            {projectInfo?.description}
           </p>
         </div>
       </div>
-      {/* <!-- ================== Single Portfolio Section One End ===============================--> */}
     </>
   );
 };

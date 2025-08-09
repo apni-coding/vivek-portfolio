@@ -91,7 +91,7 @@ export default function Portfolio({ isHomePage }) {
                   <div className="portfolio__card">
                     <Link
                       className="popup-modal--open display-block"
-                      to={routeConstants.PORTFOLIO_LIST}
+                      to={`${routeConstants.PORTFOLIO_DETAIL}/${item?.id}`}
                     >
                       {/* Project Image */}
                       <div className="portfolio__image--card">
