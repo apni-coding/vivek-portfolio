@@ -22,6 +22,7 @@ import ProjectDetails from "./pages/projectDetails/ProjectDetails";
 import LightToggle from "./common/lightDarkModeToggle/LightToggle";
 import Certificates from "./pages/certificates/Certificates";
 import NotFound from "./pages/notFound/NotFound";
+import NoInternet from "./pages/noInternet/NoInternet";
 
 function App() {
   const location = useLocation();
@@ -44,6 +45,7 @@ function App() {
   return (
     <>
       <ScrollUp />
+      <NoInternet />
       {loading && <Loader closing={closing} />}
       {!location?.pathname?.includes(routeConstants.PORTFOLIO_DETAIL) && (
         <LightToggle />
