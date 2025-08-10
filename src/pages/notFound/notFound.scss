@@ -1,0 +1,33 @@
+.not-found {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.not-found__image-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.not-found__overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 40px;
+}
+.dark .not-found {
+  background-color: #111;
+  color: #fff;
+  
+}
+.dark .not-found__image-full {
+    content: url("../../assets/icon/for_o_four_dark.svg"); 
+  }

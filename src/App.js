@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 import ProjectDetails from "./pages/projectDetails/ProjectDetails";
 import LightToggle from "./common/lightDarkModeToggle/LightToggle";
 import Certificates from "./pages/certificates/Certificates";
+import NotFound from "./pages/notFound/NotFound";
 
 function App() {
   const location = useLocation();
@@ -57,6 +58,10 @@ function App() {
         <Route
           path={`${routeConstants.PORTFOLIO_DETAIL}/:id`}
           element={<ProjectDetails />}
+        />
+        <Route
+          path="*"
+          element={<NotFound />}
         />
       </Routes>
     </>
