@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom";
 import { PROJECT_LIST } from "../../constants/propertyReslover";
 const ProjectDetails = () => {
   const params = useParams();
-  console.log(params);
   const [projectInfo, setProjectInfo] = useState({});
 
   useEffect(() => {
@@ -26,18 +25,32 @@ const ProjectDetails = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
+
+  // Apply background change when theme changes
   useEffect(() => {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme-color", "dark");
+    const header = document.querySelector(".header__sticky");
+    const linkList = document.querySelectorAll(".header__menu--link");
+    const cvBtn = document.querySelector(".secondary__btn ")
+    if (header) {
+      header.style.backgroundColor = "#000000";
+    }
+    if (linkList) {
+      linkList.forEach((link) => {
+        link.style.color = "#fff";
+      });
+    }
+    if(cvBtn){
+      cvBtn.style.color = "#fff"
+    }
   }, []);
   return (
     <>
       {/* <Loader /> */}
       <Header />
       <div className="project-detail-wrapper overflow-hidden">
-        <SectionHeadingContent projectInfo={projectInfo}/>
+        <SectionHeadingContent projectInfo={projectInfo} />
 
-        <SingleSectionTwo projectInfo={projectInfo}/>
+        <SingleSectionTwo projectInfo={projectInfo} />
       </div>
     </>
   );

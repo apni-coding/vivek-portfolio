@@ -20,6 +20,7 @@ import Loader from "./common/loader/Loader";
 import { useEffect, useState } from "react";
 import ProjectDetails from "./pages/projectDetails/ProjectDetails";
 import LightToggle from "./common/lightDarkModeToggle/LightToggle";
+import Certificates from "./pages/certificates/Certificates";
 
 function App() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function App() {
         <Route path={routeConstants.SERVICE_LIST} element={<Service />} />
         <Route path={routeConstants.PORTFOLIO_LIST} element={<Portfolio />} />
         <Route path={routeConstants.CONTACT_US} element={<Contact />} />
+        <Route path={routeConstants.REWARD_CERTIFICATES} element={<Certificates />} />
         <Route
           path={`${routeConstants.PORTFOLIO_DETAIL}/:id`}
           element={<ProjectDetails />}

@@ -4,7 +4,7 @@ import { SKILLS } from "../../constants/propertyReslover";
 export default function Skill() {
   return (
     <>
-      <section className="skills__section section--padding pt-0">
+      <section className="skills__section section--padding section--padding">
         <div className="container">
           <div className="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
             <div className="section__heading max-width-580">

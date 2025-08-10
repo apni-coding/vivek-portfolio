@@ -243,45 +243,48 @@ export const PROJECT_LIST = [
     category: ["web", "development"],
     projectInfo: {
       title: "askUtec by UltraTech",
-      description: `askUtec is a comprehensive platform designed to connect UltraTech dealers with their customers, enabling seamless social interaction and booking services. It streamlines dealer-customer communication and facilitates quick booking management.`,
-      category: "development",
+      description: `askUtec is a comprehensive platform designed to connect UltraTech dealers with their customers, enabling seamless social interaction and efficient booking services. It streamlines dealer–customer communication and facilitates quick booking management.`,
+      category: "Development",
       client: "UltraTech Industries",
       detailedIntro: {
         heading:
           "Empowering Connections and Streamlining Bookings for UltraTech Dealers and Customers",
-        paragraph1: `askUtec revolutionizes how UltraTech dealers and customers interact by providing an intuitive, user-friendly platform that enhances communication and simplifies the booking process. By integrating social features with practical booking tools, the platform fosters stronger relationships, boosts engagement, and drives efficiency across the network.`,
-        paragraph2: `Designed with scalability and real-time responsiveness in mind, askUtec delivers a seamless experience on any device. The system empowers dealers with a robust dashboard while giving customers easy access to bookings and updates. This initiative significantly improved operational workflows and user satisfaction, setting a new standard for dealer-customer collaboration in the industry.`,
+        paragraph1: `askUtec transforms the way UltraTech dealers and customers interact by offering an intuitive, user-friendly platform that enhances communication and simplifies the booking process. By integrating social features with practical booking tools, the platform fosters stronger relationships, boosts engagement, and drives efficiency across the network.`,
+        paragraph2: `Designed with scalability and real-time responsiveness in mind, askUtec delivers a seamless experience across all devices. The system equips dealers with a robust dashboard while giving customers easy access to bookings and updates. This initiative has significantly improved operational workflows and user satisfaction, setting a new benchmark for dealer–customer collaboration in the industry.`,
       },
       projectTimeline: {
-        startDate: "January 2023",
-        endDate: "June 2023",
+        startDate: "Oct 2023",
+        endDate: "Jan 2024",
       },
       roleAndResponsibilities: {
-        shortDescription: `I was the front-end lead developer responsible for designing and implementing user interfaces and integrating API endpoints.`,
+        shortDescription: `I served as the front-end developer, responsible for designing and implementing user interfaces, as well as integrating API endpoints.`,
         roleList: [
-          "Developed responsive UI components using React.js and Tailwind CSS.",
+          "Developed responsive UI components using Next.js and Tailwind CSS.",
+          "Built responsive UI components using React.js and Bootstrap CSS for the Admin Panel.",
           "Integrated RESTful APIs to fetch and display real-time booking data.",
-          "Collaborated with the backend team to design API contracts.",
+          "Collaborated with the backend team to define API contracts.",
           "Implemented authentication and role-based access control.",
           "Conducted code reviews and optimized application performance.",
         ],
       },
       technologiesUsed: [
+        "Next.js",
         "React.js",
         "Tailwind CSS",
         "Node.js",
         "Express.js",
-        "MongoDB",
+        "MySQL",
         "JWT",
         "REST APIs",
+        "AWS",
       ],
       features: [
         "User registration and authentication with JWT.",
-        "Social media-style feed for dealer updates and announcements.",
+        "Social media–style feed for dealer updates and announcements.",
         "Booking system with calendar view and status tracking.",
-        "Role-based dashboard for dealers and customers.",
-        "Real-time notifications using WebSocket.",
-        "Admin panel to manage users and content.",
+        "Role-based dashboards for dealers and customers.",
+        "Real-time notifications via WebSocket.",
+        "Admin panel for managing users and content.",
       ],
       challengesAndSolutions: [
         {
@@ -291,15 +294,15 @@ export const PROJECT_LIST = [
             "Implemented WebSocket with throttling to optimize data flow.",
         },
         {
-          challenge: "Ensuring smooth responsive design across devices.",
+          challenge: "Ensuring smooth, responsive design across devices.",
           solution:
-            "Used Tailwind CSS utility classes combined with media queries.",
+            "Utilized Tailwind CSS utility classes in combination with media queries.",
         },
       ],
       keyLearnings: [
-        "Deepened knowledge of React hooks and context for state management.",
-        "Learned how to integrate real-time features with WebSocket.",
-        "Improved collaboration skills working with cross-functional teams.",
+        "Deepened expertise in Next.js.",
+        "Gained experience integrating real-time features with WebSocket.",
+        "Enhanced collaboration skills while working with cross-functional teams.",
       ],
       projectScreenshots: [
         "/images/askUtec/dashboard.png",
@@ -307,12 +310,12 @@ export const PROJECT_LIST = [
         "/images/askUtec/profile.png",
       ],
       repoInfo: {
-        // gitHubOwner:"apni-coding",
-        // repoName:"vivek-portfolio",
-        // branchName:"main"
+        // gitHubOwner: "apni-coding",
+        // repoName: "vivek-portfolio",
+        // branchName: "main"
       },
       liveDemoLink: "https://utecbyultratech.com/",
-      conclusion: `The platform successfully improved communication and booking efficiency between dealers and customers, resulting in a 30% increase in booking speed and positive client feedback.`,
+      conclusion: `The platform successfully improved communication and booking efficiency between dealers and customers, leading to a 30% increase in booking speed and receiving highly positive client feedback.`,
     },
   },
   {
@@ -320,31 +323,35 @@ export const PROJECT_LIST = [
     name: "Coolant Management System",
     bgImg: null,
     shortDescription:
-      "IoT dashboard for real-time coolant tracking and analysis.",
+      "IoT-powered dashboard for real-time coolant tracking, machine management, and analytics.",
     category: ["web", "iot"],
     projectInfo: {
       title: "Coolant Management System",
-      description: `An IoT-powered web dashboard enabling factories to monitor, track, and analyze coolant levels in real-time, reducing downtime and improving operational efficiency.`,
-      category: "iot",
+      description: `An IoT-powered, role-based tracking dashboard enabling industries to monitor, manage, and analyze coolant usage, machine performance, and oil conditions in real time. The system streamlines operations, reduces downtime, and improves decision-making with advanced reporting and analytics.`,
+      category: "IoT",
       client: "Manufacturing Plant Automation Division",
       detailedIntro: {
         heading:
-          "Revolutionizing Coolant Tracking with IoT and Real-Time Analytics",
-        paragraph1: `The Coolant Management System provides a centralized interface to monitor coolant usage, temperature, and quality across multiple machines. Real-time IoT sensors send data to a cloud-based platform, enabling predictive maintenance and efficient resource planning.`,
-        paragraph2: `With custom alert systems and advanced data visualization, the platform empowers plant managers to prevent breakdowns, optimize coolant usage, and comply with safety regulations.`,
+          "Revolutionizing Coolant and Machine Oil Tracking with IoT and Real-Time Analytics",
+        paragraph1: `The Coolant Management System provides a centralized platform to manage companies, machines, and oils while tracking coolant levels, temperature, and quality across multiple machines. Real-time IoT sensors feed data to the cloud, enabling predictive maintenance, reduced wastage, and improved operational efficiency.`,
+        paragraph2: `With features like Excel exports, graph visualizations, custom filters, and dynamic forms, the dashboard empowers managers and technicians to make informed decisions, comply with safety regulations, and optimize resource usage. The responsive design ensures seamless accessibility on all devices.`,
       },
       projectTimeline: {
         startDate: "July 2023",
         endDate: "December 2023",
       },
       roleAndResponsibilities: {
-        shortDescription: `I was the full-stack developer responsible for building the dashboard and integrating IoT device APIs.`,
+        shortDescription: `I was the sole full-stack developer responsible for end-to-end development, from UI design to backend integration, ensuring a responsive and user-friendly experience.`,
         roleList: [
-          "Developed a real-time monitoring dashboard using React.js and Chart.js.",
-          "Integrated MQTT protocol for live IoT data updates.",
-          "Built backend APIs with Node.js and Express.js for data processing.",
-          "Implemented role-based access control for plant managers and technicians.",
-          "Optimized database queries in MongoDB for large datasets.",
+          "Built the frontend with React.js for managing companies, machines, and oils.",
+          "Developed dynamic forms for flexible data entry.",
+          "Integrated MQTT protocol for live IoT sensor data updates.",
+          "Implemented Excel export functionality for reports.",
+          "Added interactive graph visualizations using Chart.js.",
+          "Created backend APIs with Node.js and Express.js for data processing.",
+          "Implemented role-based access control for managers and technicians.",
+          "Optimized MongoDB queries for large datasets.",
+          "Ensured fully responsive UI/UX across devices.",
         ],
       },
       technologiesUsed: [
@@ -354,32 +361,33 @@ export const PROJECT_LIST = [
         "MongoDB",
         "MQTT",
         "Chart.js",
-        "Tailwind CSS",
+        "ExcelJS",
       ],
       features: [
-        "Real-time coolant level and temperature monitoring.",
+        "Real-time coolant level, temperature, and oil tracking.",
+        "Company, machine, and oil management modules.",
         "Predictive maintenance alerts via email and SMS.",
-        "Historical usage analytics with exportable reports.",
-        "Multi-device integration with MQTT.",
-        "User role-based dashboards for managers and technicians.",
+        "Excel export for historical and filtered reports.",
+        "Graph visualizations for usage trends and analytics.",
+        "Role-based dashboards for managers and technicians.",
+        "Advanced filtering for machines, oils, and usage data.",
       ],
       challengesAndSolutions: [
         {
-          challenge:
-            "Processing large amounts of IoT data without lag.",
+          challenge: "Processing large volumes of IoT data without latency.",
           solution:
             "Used MQTT with lightweight payloads and optimized backend aggregation queries.",
         },
         {
-          challenge: "Ensuring data accuracy from remote devices.",
+          challenge: "Ensuring accurate data from remote IoT devices.",
           solution:
-            "Implemented checksum verification and retry logic for IoT device communications.",
+            "Implemented checksum verification and retry logic for device communication.",
         },
       ],
       keyLearnings: [
         "Hands-on experience with MQTT and IoT device integration.",
-        "Learned to optimize dashboards for large-scale real-time data.",
-        "Improved backend data processing techniques for IoT applications.",
+        "Learned to optimize dashboards for high-volume, real-time data.",
+        "Improved backend aggregation and reporting for industrial IoT applications.",
       ],
       projectScreenshots: [
         "/images/coolant/dashboard.png",
@@ -387,7 +395,7 @@ export const PROJECT_LIST = [
       ],
       repoLink: "https://github.com/yourusername/coolant-management",
       liveDemoLink: "#",
-      conclusion: `This system reduced coolant wastage by 25% and improved predictive maintenance accuracy by 40%, significantly cutting operational costs.`,
+      conclusion: `This system reduced coolant wastage by 25% and improved predictive maintenance accuracy by 40%, significantly lowering operational costs and enhancing plant efficiency.`,
     },
   },
   {
@@ -412,57 +420,61 @@ export const PROJECT_LIST = [
         endDate: "August 2024",
       },
       roleAndResponsibilities: {
-        shortDescription: `I served as the lead React Native developer, building a cross-platform mobile app.`,
+        shortDescription: `I served as the Node.js backend developer, building secure and scalable REST APIs using AWS Lambda and MongoDB.`,
         roleList: [
-          "Developed core UI components with React Native and TypeScript.",
-          "Integrated AI-based recommendation API with secure authentication.",
-          "Implemented push notifications for medication and activity reminders.",
-          "Connected app to wearable devices via Bluetooth and Health APIs.",
-          "Ensured HIPAA compliance for sensitive health data storage.",
+          "Designed and implemented RESTful APIs to support mobile app functionalities.",
+          "Developed AWS Lambda functions for serverless backend operations.",
+          "Integrated AI-based recommendation engine with API endpoints.",
+          "Implemented authentication and authorization using JWT.",
+          "Connected backend with wearable device data through third-party APIs.",
+          "Ensured HIPAA compliance and secure storage of sensitive health data.",
+          "Optimized database queries and indexing in MongoDB for fast response times.",
         ],
       },
       technologiesUsed: [
-        "React Native",
-        "TypeScript",
         "Node.js",
         "Express.js",
         "MongoDB",
+        "AWS Lambda",
+        "API Gateway",
         "TensorFlow.js",
-        "Firebase",
+        "JWT",
+        "S3",
       ],
       features: [
         "AI-driven health and wellness recommendations.",
-        "Integration with smartwatches and fitness trackers.",
-        "Medication and activity reminders.",
-        "Video consultations with healthcare professionals.",
-        "Secure storage of health data with encryption.",
+        "Integration with wearable devices and fitness trackers.",
+        "Secure authentication and user management.",
+        "Medication and activity tracking APIs.",
+        "Video consultation scheduling APIs.",
+        "Encrypted storage for sensitive health records.",
       ],
       challengesAndSolutions: [
         {
           challenge:
-            "Handling sensitive health data securely.",
+            "Handling sensitive health data securely in compliance with HIPAA.",
           solution:
-            "Implemented end-to-end encryption and HIPAA-compliant storage protocols.",
+            "Implemented end-to-end encryption, secured API Gateway endpoints, and used encrypted MongoDB storage.",
         },
         {
           challenge:
-            "Synchronizing wearable device data in real time.",
+            "Ensuring real-time synchronization with wearable device data.",
           solution:
-            "Used background services with optimized Bluetooth polling intervals.",
+            "Built optimized AWS Lambda functions with event-driven architecture to handle frequent updates efficiently.",
         },
       ],
       keyLearnings: [
-        "Gained expertise in healthcare app compliance standards.",
-        "Integrated AI models into mobile applications effectively.",
-        "Improved skills in real-time wearable device data syncing.",
+        "Gained in-depth experience in serverless architecture with AWS Lambda.",
+        "Enhanced skills in designing secure APIs for healthcare applications.",
+        "Learned to integrate AI-driven features within backend services.",
       ],
       projectScreenshots: [
         "/images/oku/dashboard.png",
         "/images/oku/consultation.png",
       ],
       repoLink: "https://github.com/yourusername/oku-app",
-      liveDemoLink: "#",
-      conclusion: `The app improved user engagement with health tracking by 45% and received positive feedback from both users and healthcare providers.`,
+      liveDemoLink: "https://www.oku-app.com/",
+      conclusion: `The backend successfully powered an AI-driven healthcare app, ensuring secure and scalable operations, resulting in a 45% increase in user engagement and highly positive feedback from healthcare providers.`,
     },
   },
   {
@@ -513,14 +525,12 @@ export const PROJECT_LIST = [
       ],
       challengesAndSolutions: [
         {
-          challenge:
-            "Accurate barcode scanning on all devices.",
+          challenge: "Accurate barcode scanning on all devices.",
           solution:
             "Implemented a fallback manual input system for devices with poor camera quality.",
         },
         {
-          challenge:
-            "Syncing large inventories in real-time.",
+          challenge: "Syncing large inventories in real-time.",
           solution:
             "Used Firebase real-time database with offline caching support.",
         },
@@ -587,14 +597,12 @@ export const PROJECT_LIST = [
       ],
       challengesAndSolutions: [
         {
-          challenge:
-            "Generating accurate itineraries with limited user input.",
+          challenge: "Generating accurate itineraries with limited user input.",
           solution:
             "Trained AI model to infer preferences from travel history and basic questions.",
         },
         {
-          challenge:
-            "Handling multiple third-party API integrations.",
+          challenge: "Handling multiple third-party API integrations.",
           solution:
             "Implemented an API aggregation layer for consistent responses.",
         },
@@ -615,3 +623,68 @@ export const PROJECT_LIST = [
   },
 ];
 
+export const CERTIFICATE_REWARD_LIST = [
+  {
+    id: "reward-1",
+    name: "Best Employee of the Month",
+    type: "reward",
+    category: ["reward"],
+    bgImg: require("../assets/achievement/july_emp_month.jpg"),
+    shortDescription: "Recognized for outstanding performance in July 2024.",
+  },
+  {
+    id: "cert-1",
+    name: "Full Stack Developer Certification",
+    type: "certificate",
+    category: ["certificate"],
+    bgImg: require("../assets/achievement/fullstack.jpg"),
+    shortDescription:
+      "Awarded for exceptional performance in completing the Full Stack Development Bootcamp.",
+  },
+  {
+    id: "cert-2",
+    name: "Node.js Certification",
+    type: "certificate",
+    category: ["certificate"],
+    bgImg: require("../assets/achievement/nodejs.jpg"),
+    shortDescription:
+      "Awarded for exceptional performance in completing the Node.js Development Program.",
+  },
+  {
+    id: "cert-3",
+    name: "React Certification",
+    type: "certificate",
+    category: ["certificate"],
+    bgImg: require("../assets/achievement/react.jpg"),
+    shortDescription:
+      "Awarded for exceptional performance in completing the React Development Program.",
+  },
+  {
+    id: "cert-4",
+    name: "DSA in Java Certification",
+    type: "certificate",
+    category: ["certificate"],
+    bgImg: require("../assets/achievement/dsa_in_java.jpg"),
+    shortDescription:
+      "Awarded for exceptional performance in completing the Data Structures and Algorithms in Java Program.",
+  },
+  {
+    id: "ach-1",
+    name: "LeetCode 500 Problems Badge",
+    type: "achievement",
+    category: ["programming"],
+    bgImg: require("../assets/achievement/leetcode.jpg"),
+    redirectLink: "https://leetcode.com/u/apnicoding72/",
+    shortDescription: "Awarded for solving 500+ coding problems on LeetCode.",
+  },
+  {
+    id: "ach-2",
+    name: "LeetCode Daily Streak Badge",
+    type: "achievement",
+    category: ["programming"],
+    bgImg: require("../assets/achievement/leetcode.jpg"),
+    redirectLink: "https://leetcode.com/u/apnicoding72/",
+    shortDescription:
+      "Maintained a daily problem-solving streak for 100+ days.",
+  },
+];

@@ -71,6 +71,23 @@ export default function DetailPageHeader() {
       ),
       type: "link",
     },
+    {
+      text: "ACHIEVEMENTS",
+      to: routeConstants.REWARD_CERTIFICATES,
+      icon: (
+        <svg
+          class="text-accent1"
+          width="18"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M18 2h-1V1a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v1H6a1 1 0 0 0-1 1v3a5 5 0 0 0 4.3 4.94A6.99 6.99 0 0 0 11 16.9V19H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.1a6.99 6.99 0 0 0 1.7-5.96A5 5 0 0 0 19 6V3a1 1 0 0 0-1-1zM7 6V4h1v2a3 3 0 0 1-3 3 3 3 0 0 1 2-3zm10 0a3 3 0 0 1-3 3V4h3v2z"></path>
+        </svg>
+      ),
+      type: "link",
+    },
     // {
     //   text: "BLOG",
     //   to: "/blog",

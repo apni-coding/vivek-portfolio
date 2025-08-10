@@ -196,4 +196,11 @@
 }
 
 
+.dark .modal-title{
+    color: #fff;
+}
 
+
+.dark .btn-close{
+    color: #fff;
+}

@@ -23,6 +23,7 @@ export default function Header() {
       route: routeConstants.PORTFOLIO_LIST,
       id: "portfolio",
     },
+    { label: "Achievements", route: routeConstants.REWARD_CERTIFICATES, id: "achievements" },
     // { label: "Blog", route: routeConstants.BLOG, id: "blog" }, // optional
     { label: "Contact", route: routeConstants.CONTACT_US, id: "contact" },
   ];
