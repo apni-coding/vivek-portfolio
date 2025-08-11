@@ -23,6 +23,7 @@ import LightToggle from "./common/lightDarkModeToggle/LightToggle";
 import Certificates from "./pages/certificates/Certificates";
 import NotFound from "./pages/notFound/NotFound";
 import NoInternet from "./pages/noInternet/NoInternet";
+import Chatbot from "./pages/chatBot/ChatBot";
 
 function App() {
   const location = useLocation();
@@ -46,6 +47,7 @@ function App() {
     <>
       <ScrollUp />
       <NoInternet />
+      <Chatbot />
       {loading && <Loader closing={closing} />}
       {!location?.pathname?.includes(routeConstants.PORTFOLIO_DETAIL) && (
         <LightToggle />
