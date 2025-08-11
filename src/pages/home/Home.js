@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../header/Header";
 import Hero from "../hero/Hero";
 import Service from "../service/Service";
@@ -10,8 +10,16 @@ import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
 import ScrollUp from "../../common/scrollUp/ScrollUp";
 import Certificates from "../certificates/Certificates";
+import { useDispatch, useSelector } from "react-redux";
+import { getLoginUserDetail } from "../../redux/slices/userSlice";
 
 export default function Home() {
+  const dispatch = useDispatch();
+  // const {loginUserDetails} = useSelector((state)=>state.user)
+  // console.log(loginUserDetails)
+  // useEffect(()=>{
+  //   dispatch(getLoginUserDetail())
+  // },[])
   return (
     <div>
       <Header />
