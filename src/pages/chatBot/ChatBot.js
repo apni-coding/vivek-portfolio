@@ -4,8 +4,9 @@ import config from "./Config";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 import "./chatBot.scss";
-import 'react-chatbot-kit/build/main.css';
-import closeIcon from '../../assets/icon/close.svg'
+import "react-chatbot-kit/build/main.css";
+import closeIcon from "../../assets/icon/close.svg";
+import TypingIndicator from "./TypingIndicator";
 function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
@@ -13,14 +14,36 @@ function ChatBot() {
     const interval = setInterval(() => {
       const inputEl = document.querySelector(".react-chatbot-kit-chat-input");
       if (inputEl) {
-        inputEl.placeholder = "Let's chat…"; 
+        inputEl.placeholder = "Let's chat…";
         clearInterval(interval);
       }
     }, 100);
     return () => clearInterval(interval);
   }, [isOpen]);
+
+  useEffect(() => {
+    const input = document.querySelector(".react-chatbot-kit-chat-input");
+    const button = document.querySelector(".react-chatbot-kit-chat-btn-send");
+
+    if (input && button) {
+      const updateButtonState = () => {
+        button.disabled = input.value.trim() === "";
+      };
+
+      // Initial check
+      updateButtonState();
+
+      // Watch for typing
+      input.addEventListener("input", updateButtonState);
+
+      return () => {
+        input.removeEventListener("input", updateButtonState);
+      };
+    }
+  }, [isOpen]);
   return (
     <div className="chatbot-wrapper">
+     
       {/* Floating Button */}
       {!isOpen && (
         <button className="chatbot-toggle" onClick={() => setIsOpen(true)}>
@@ -38,9 +61,10 @@ function ChatBot() {
       {/* Chatbot Window */}
       {isOpen && (
         <div className="chatbot-container">
-            <button className="close-btn" onClick={() => setIsOpen(false)}>
-              <img src={closeIcon} alt={"close"} />
-            </button>
+          <button className="close-btn" onClick={() => setIsOpen(false)}>
+            <img src={closeIcon} alt={"close"} />
+          </button>
+          {/* <div className="typing-indictor"><TypingIndicator /></div> */}
           <Chatbot
             config={config}
             messageParser={MessageParser}

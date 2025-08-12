@@ -5,7 +5,6 @@ class MessageParser {
 
   parse(message) {
     const msg = message.toLowerCase();
-
     // Greetings
     if (/(hi|hello|hey|good morning|good afternoon)/.test(msg)) {
       this.actionProvider.handleGreeting();
@@ -45,9 +44,9 @@ class MessageParser {
     // Availability
     else if (/available|hiring|job|opportunity/.test(msg)) {
       this.actionProvider.handleAvailability();
-    }
-    // Unknown
-    else {
+    } else if (message.trim()) {
+      this.actionProvider.handleUserMessage(message);
+    } else {
       this.actionProvider.handleUnknown();
     }
   }

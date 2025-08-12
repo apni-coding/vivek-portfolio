@@ -10,7 +10,7 @@ const config = {
     {
       widgetName: "contactOptions",
       widgetFunc: (props) => <ContactOptions {...props} />
-    }
+    },
   ]
 };
 
