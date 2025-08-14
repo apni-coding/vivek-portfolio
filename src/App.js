@@ -24,6 +24,8 @@ import Certificates from "./pages/certificates/Certificates";
 import NotFound from "./pages/notFound/NotFound";
 import NoInternet from "./pages/noInternet/NoInternet";
 import Chatbot from "./pages/chatBot/ChatBot";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 
 function App() {
   const location = useLocation();

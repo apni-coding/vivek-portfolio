@@ -107,13 +107,13 @@
 .offcanvas__download--btn {
   text-align: center;
   margin-top: 3rem;
-   @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 991px) {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     align-items: center;
-   }
+  }
 }
 /* 
     offcanvas Menu css 
@@ -296,12 +296,13 @@
 }
 .toggle__navigation {
   position: fixed;
-  top: 3rem;
+  top: 30%;
   left: 3rem;
   z-index: 9;
   padding: 0 0 2.5rem;
   @media only screen and (max-width: 991px) {
     // display: none;
+    top: 3rem;
   }
   &--close {
     display: none;
@@ -327,12 +328,12 @@
     & .toggle__nav--menu {
       opacity: 1;
     }
-      @media only screen and (max-width: 991px) {
-     background: rgba(255, 255, 255, 0.2); // Light overlay
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 10px;
-  }
+    @media only screen and (max-width: 991px) {
+      background: rgba(255, 255, 255, 0.2); // Light overlay
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 10px;
+    }
   }
   &--button {
     width: 5rem;

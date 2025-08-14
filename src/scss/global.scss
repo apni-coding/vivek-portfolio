@@ -578,6 +578,11 @@ hr {
     background: var(--foreground-color);
     color: var(--text-white-color);
   }
+  &:disabled {
+    background: var(--secondary-color);
+    color: var(--text-white-color) !important;
+    cursor: not-allowed;
+  }
   @media only screen and (min-width: 768px) {
     line-height: 4.2rem;
     height: 4.2rem;
@@ -1228,4 +1233,23 @@ body.overlay__active::before,
 
 .react-pdf__Page__canvas {
   width: 100% !important;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.contact__button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

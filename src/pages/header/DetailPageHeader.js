@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { routeConstants } from "../../constants/routeConstant";
 
 export default function DetailPageHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   const location = useLocation();
 
   const menuItems = [
@@ -124,6 +124,24 @@ export default function DetailPageHeader() {
       active: true,
     },
   ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) {
+        // tablet & mobile
+        setIsMenuOpen(false);
+      } else {
+        setIsMenuOpen(true);
+      }
+    };
+
+    // Run on mount
+    handleResize();
+
+    // Also update when resizing
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className={`toggle__navigation ${isMenuOpen ? "menu--visible" : ""}`}>

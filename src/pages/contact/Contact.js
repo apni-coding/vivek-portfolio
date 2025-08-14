@@ -1,7 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.scss";
 import DetailPageHeader from "../header/DetailPageHeader";
+import { POST } from "../../services/axiosRequestHandler";
+import { API_END_POINT } from "../../utils/apiEndPoints";
+import Swal from "sweetalert2";
 export default function Contact({ isHomePage }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const isEmailValid = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // Prevent starting with space for name and message
+    if ((name === "name" || name === "message") && value.startsWith(" ")) {
+      return;
+    }
+
+    // Prevent typing invalid email characters
+    if (name === "email") {
+      if (value.startsWith(" ")) return;
+      // Allow any char but check validity later
+    }
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const isFormValid =
+    formData.name.trim() &&
+    isEmailValid(formData.email) &&
+    formData.message.trim();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+    setLoading(true);
+    try {
+      await POST(API_END_POINT.CONTACT_US, payload);
+      // Reset form after success
+      setFormData({ name: "", email: "", message: "" });
+      Swal.fire({
+        title: "Message Sent!",
+        text: "Thank you for contacting us. We'll get back to you soon.",
+        icon: "success",
+        confirmButtonText: "Close",
+      });
+    } catch (error) {
+      Swal.fire({
+        title: "Oops!",
+        text:
+          error?.response?.data?.message ||
+          "Something went wrong. Please try again.",
+        icon: "error",
+        confirmButtonText: "Okay",
+      });
+      console.error("Error sending message:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       {!isHomePage && (
@@ -44,13 +114,16 @@ export default function Contact({ isHomePage }) {
                     reach out via phone, email, or the contact form below.
                   </p>
                 </div>
-                <form className="contact__form" action="#">
+                <form className="contact__form">
                   <div className="row">
                     <div className="col-lg-6 col-md-6 col-sm-6 mb-30">
                       <input
                         className="contact__input--field"
                         placeholder="Your name"
                         type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-6 mb-30">
@@ -58,15 +131,30 @@ export default function Contact({ isHomePage }) {
                         className="contact__input--field"
                         placeholder="Your email"
                         type="text"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
                   <textarea
                     className="contact__textarea--field"
                     placeholder="Message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                   ></textarea>
-                  <button className="contact__button primary__btn">
-                    Send Request
+                  <button
+                    type="submit"
+                    className="contact__button primary__btn"
+                    disabled={!isFormValid || loading}
+                    onClick={handleSubmit}
+                  >
+                    {loading ? (
+                      <span className="spinner"></span>
+                    ) : (
+                      "Send Request"
+                    )}
                   </button>
                 </form>
               </div>
