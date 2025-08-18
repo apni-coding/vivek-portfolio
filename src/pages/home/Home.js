@@ -17,9 +17,9 @@ export default function Home() {
   const dispatch = useDispatch();
   // const {loginUserDetails} = useSelector((state)=>state.user)
   // console.log(loginUserDetails)
-  // useEffect(()=>{
-  //   dispatch(getLoginUserDetail())
-  // },[])
+  useEffect(()=>{
+    dispatch(getLoginUserDetail())
+  },[])
   return (
     <div>
       <Header />

@@ -9,10 +9,10 @@ const userInitialState = {
 };
 
 export const getLoginUserDetail = createAsyncThunk(
-  "auction/getLoginUserDetail",
+  "user/getLoginUserDetail",
   async (_, thunkApi) => {
     try {
-      const response = await GET("https://dummyjson.com/products");
+      const response = await GET(API_END_POINT.START_SERVER);
       if (response?.status === 200) {
         return response?.data?.data;
       } else {
@@ -21,13 +21,29 @@ export const getLoginUserDetail = createAsyncThunk(
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
+  },
+  {
+    condition: (_, { getState }) => {
+      const { user } = getState();
+      // Prevent re-fetch if we already have user details
+      if (user.loginUserDetails && Object.keys(user.loginUserDetails).length > 0) {
+        return false;
+      }
+    },
   }
 );
+
 
 export const userSlice = createSlice({
   name: "user",
   initialState: userInitialState,
-  reducers: {},
+  reducers: {
+    resetUser: (state) => {
+      state.loginUserDetails = {};
+      state.error = null;
+      state.isLoading = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getLoginUserDetail.pending, (state) => {
@@ -45,4 +61,5 @@ export const userSlice = createSlice({
   },
 });
 
+export const { resetUser } = userSlice.actions;
 export default userSlice.reducer;
