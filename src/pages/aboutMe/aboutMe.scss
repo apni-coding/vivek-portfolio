@@ -15,7 +15,9 @@
 .page__heading{
     position: relative;
     text-align: center;
-    margin-top: 8rem;
+    // margin-top: 8rem;
+    padding-top: 12rem;
+
     &--title{
         font-size: 3.8rem;
         line-height: 4rem;
@@ -44,7 +46,7 @@
     }
     &--subtitle{
         position: absolute;
-        top: 50%;
+        top: 82%;
         left: 0;
         right: 0;
         text-align: center;

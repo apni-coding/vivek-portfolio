@@ -62,10 +62,14 @@ function App() {
     <>
       <ScrollUp />
       <NoInternet />
+      {/* <Header /> */}
       <Chatbot />
       {loading && <Loader closing={closing} />}
       {!location?.pathname?.includes(routeConstants.PORTFOLIO_DETAIL) && (
-        <LightToggle />
+        <>
+          <LightToggle />
+          <Header />
+        </>
       )}
       <Routes>
         <Route path={routeConstants.HOME} element={<Home />} />

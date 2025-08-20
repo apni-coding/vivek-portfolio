@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { routeConstants } from "../../constants/routeConstant";
 import { downloadFile } from "../../utils/commonFunction";
 import { CV_URL } from "../../constants/propertyReslover";
@@ -43,27 +43,34 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const renderMenuLinks = (isMobile = false) =>
-    menuItems.map((item) => (
-      <li
-        key={item.id}
-        className={isMobile ? "offcanvas__menu_li" : "header__menu--items"}
-      >
-        {isMobile ? (
-          <Link
-            className="offcanvas__menu_item"
-            to={item.route}
-            onClick={() => setIsOffcanvasOpen(false)}
-          >
-            {item.label}
-          </Link>
-        ) : (
-          <Link className="header__menu--link" to={item.route}>
-            {item.label}
-          </Link>
-        )}
-      </li>
-    ));
+ const renderMenuLinks = (isMobile = false) =>
+  menuItems.map((item) => (
+    <li
+      key={item.id}
+      className={isMobile ? "offcanvas__menu_li" : "header__menu--items"}
+    >
+      {isMobile ? (
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "offcanvas__menu_item active" : "offcanvas__menu_item"
+          }
+          to={item.route}
+          onClick={() => setIsOffcanvasOpen(false)}
+        >
+          {item.label}
+        </NavLink>
+      ) : (
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "header__menu--link active" : "header__menu--link"
+          }
+          to={item.route}
+        >
+          {item.label}
+        </NavLink>
+      )}
+    </li>
+  ));
 
   const renderDownloadButton = (isMobile = false) => (
     <>

@@ -234,6 +234,173 @@ export const SKILLS = [
 ];
 
 export const PROJECT_LIST = [
+  // {
+  //   id: 1,
+  //   name: "askUtec by UltraTech",
+  //   bgImg: askUtecBg,
+  //   shortDescription:
+  //     "Social media & booking platform for UltraTech dealers and customers.",
+  //   category: ["web", "development"],
+  //   projectInfo: {
+  //     title: "askUtec by UltraTech",
+  //     description: `askUtec is a comprehensive platform designed to connect UltraTech dealers with their customers, enabling seamless social interaction and efficient booking services. It streamlines dealer–customer communication and facilitates quick booking management.`,
+  //     category: "Development",
+  //     client: "UltraTech Industries",
+  //     detailedIntro: {
+  //       heading:
+  //         "Empowering Connections and Streamlining Bookings for UltraTech Dealers and Customers",
+  //       paragraph1: `askUtec transforms the way UltraTech dealers and customers interact by offering an intuitive, user-friendly platform that enhances communication and simplifies the booking process. By integrating social features with practical booking tools, the platform fosters stronger relationships, boosts engagement, and drives efficiency across the network.`,
+  //       paragraph2: `Designed with scalability and real-time responsiveness in mind, askUtec delivers a seamless experience across all devices. The system equips dealers with a robust dashboard while giving customers easy access to bookings and updates. This initiative has significantly improved operational workflows and user satisfaction, setting a new benchmark for dealer–customer collaboration in the industry.`,
+  //     },
+  //     projectTimeline: {
+  //       startDate: "Oct 2023",
+  //       endDate: "Jan 2024",
+  //     },
+  //     roleAndResponsibilities: {
+  //       shortDescription: `I served as the front-end developer, responsible for designing and implementing user interfaces, as well as integrating API endpoints.`,
+  //       roleList: [
+  //         "Developed responsive UI components using Next.js and Tailwind CSS.",
+  //         "Built responsive UI components using React.js and Bootstrap CSS for the Admin Panel.",
+  //         "Integrated RESTful APIs to fetch and display real-time booking data.",
+  //         "Collaborated with the backend team to define API contracts.",
+  //         "Implemented authentication and role-based access control.",
+  //         "Conducted code reviews and optimized application performance.",
+  //       ],
+  //     },
+  //     technologiesUsed: [
+  //       "Next.js",
+  //       "React.js",
+  //       "Tailwind CSS",
+  //       "Node.js",
+  //       "Express.js",
+  //       "MySQL",
+  //       "JWT",
+  //       "REST APIs",
+  //       "AWS",
+  //     ],
+  //     features: [
+  //       "User registration and authentication with JWT.",
+  //       "Social media–style feed for dealer updates and announcements.",
+  //       "Booking system with calendar view and status tracking.",
+  //       "Role-based dashboards for dealers and customers.",
+  //       "Real-time notifications via WebSocket.",
+  //       "Admin panel for managing users and content.",
+  //     ],
+  //     challengesAndSolutions: [
+  //       {
+  //         challenge:
+  //           "Handling real-time updates without overloading the server.",
+  //         solution:
+  //           "Implemented WebSocket with throttling to optimize data flow.",
+  //       },
+  //       {
+  //         challenge: "Ensuring smooth, responsive design across devices.",
+  //         solution:
+  //           "Utilized Tailwind CSS utility classes in combination with media queries.",
+  //       },
+  //     ],
+  //     keyLearnings: [
+  //       "Deepened expertise in Next.js.",
+  //       "Gained experience integrating real-time features with WebSocket.",
+  //       "Enhanced collaboration skills while working with cross-functional teams.",
+  //     ],
+  //     projectScreenshots: [
+  //       "/images/askUtec/dashboard.png",
+  //       "/images/askUtec/booking.png",
+  //       "/images/askUtec/profile.png",
+  //     ],
+  //     repoInfo: {
+  //       // gitHubOwner: "apni-coding",
+  //       // repoName: "vivek-portfolio",
+  //       // branchName: "main"
+  //     },
+  //     liveDemoLink: "https://utecbyultratech.com/",
+  //     conclusion: `The platform successfully improved communication and booking efficiency between dealers and customers, leading to a 30% increase in booking speed and receiving highly positive client feedback.`,
+  //   },
+  // },
+  {
+    id: 6,
+    name: "Utec By UltraTech Digital Ecosystem",
+    bgImg: null,
+    shortDescription:
+      "Suite of digital applications for UltraTech including Admin Panel, Partner Portal, One Technical Web, BPD Dashboard, Kiosk App, and SR Tracker.",
+    category: ["web", "development"],
+    projectInfo: {
+      title: "Utec By UltraTech Digital Ecosystem",
+      description: `A collection of interconnected web applications developed for UltraTech to enhance dealer, partner, and sales representative engagement. The suite includes Admin Panel, Partner Portal, One Technical Web, BPD Dashboard, Kiosk Application, and SR Tracker — each designed to address specific business needs from content management to sales tracking.`,
+      category: "Development",
+      client: "UltraTech Industries",
+      detailedIntro: {
+        heading: "Building a Connected Digital Ecosystem for UltraTech",
+        paragraph1: `The Digital Ecosystem consolidates multiple applications under UltraTech’s umbrella, empowering partners, dealers, and internal teams with powerful tools for management, engagement, and tracking.`,
+        paragraph2: `From managing leads and rewards to real-time tracking of sales representatives, each module was designed with scalability, responsiveness, and performance in mind. This ecosystem significantly enhanced efficiency and user experience across UltraTech’s digital operations.`,
+      },
+      projectTimeline: {
+        startDate: "Aug 2023",
+        endDate: "Present",
+      },
+      roleAndResponsibilities: {
+        shortDescription: `I worked as a Frontend Developer across multiple modules, ensuring responsive design, reusable components, and smooth integrations.`,
+        roleList: [
+          "Developed responsive UIs with React.js and Next.js.",
+          "Worked on Admin Panel for content, role, and user management.",
+          "Built Partner Portal for B2B partners to track leads and activities.",
+          "Implemented One Technical Web with chatbot, EMI calculator, and incident tracking.",
+          "Developed BPD Dashboard with QR scanning, reward schemes, and incentives.",
+          "Created Kiosk App for public digital displays.",
+          "Worked on SR Tracker for real-time sales rep performance tracking.",
+          "Implemented role-based access control, form validations, and reusable UI components.",
+          "Followed Agile methodology using JIRA for task management.",
+        ],
+      },
+      technologiesUsed: [
+        "React.js",
+        "Next.js",
+        "Redux Toolkit",
+        "Bootstrap CSS",
+        "Tailwind CSS",
+        "Node.js",
+        "MySQL",
+        "AWS",
+        "JIRA",
+      ],
+      features: [
+        "Multi-application ecosystem under one platform.",
+        "Role-based access control for different modules.",
+        "Dynamic dashboards for partners, dealers, and sales reps.",
+        "Chatbot integration, EMI calculator, and incident tracking.",
+        "Reward and incentive management with QR scanning.",
+        "Public-facing Kiosk application.",
+      ],
+      challengesAndSolutions: [
+        {
+          challenge:
+            "Maintaining consistency across multiple independent applications.",
+          solution:
+            "Developed a shared UI component library and enforced design standards.",
+        },
+        {
+          challenge: "Integrating real-time updates across different modules.",
+          solution:
+            "Used efficient state management and modular API contracts to sync data.",
+        },
+      ],
+      keyLearnings: [
+        "Gained experience working on a large-scale multi-app ecosystem.",
+        "Improved skills in modular development and reusable component design.",
+        "Enhanced collaboration in Agile environments using JIRA.",
+      ],
+      projectScreenshots: [
+        "/images/utec/admin.png",
+        "/images/utec/partner.png",
+        "/images/utec/dashboard.png",
+      ],
+      repoInfo: {},
+      liveDemoLink: "#",
+      conclusion: `This digital ecosystem streamlined UltraTech’s partner, dealer, and internal operations, boosting efficiency and engagement across all platforms.`,
+    },
+  },
+
   {
     id: 1,
     name: "askUtec by UltraTech",
@@ -250,72 +417,67 @@ export const PROJECT_LIST = [
         heading:
           "Empowering Connections and Streamlining Bookings for UltraTech Dealers and Customers",
         paragraph1: `askUtec transforms the way UltraTech dealers and customers interact by offering an intuitive, user-friendly platform that enhances communication and simplifies the booking process. By integrating social features with practical booking tools, the platform fosters stronger relationships, boosts engagement, and drives efficiency across the network.`,
-        paragraph2: `Designed with scalability and real-time responsiveness in mind, askUtec delivers a seamless experience across all devices. The system equips dealers with a robust dashboard while giving customers easy access to bookings and updates. This initiative has significantly improved operational workflows and user satisfaction, setting a new benchmark for dealer–customer collaboration in the industry.`,
+        paragraph2: `Designed with scalability and real-time responsiveness in mind, askUtec delivers a seamless experience across all devices. The system equips dealers with a robust dashboard while giving customers easy access to bookings and updates.`,
       },
       projectTimeline: {
         startDate: "Oct 2023",
         endDate: "Jan 2024",
       },
       roleAndResponsibilities: {
-        shortDescription: `I served as the front-end developer, responsible for designing and implementing user interfaces, as well as integrating API endpoints.`,
+        shortDescription: `I served as the front-end developer, working on the Admin Panel, Partner Portal, One Technical Web, BPD Dashboard, Kiosk App, and SR Tracker under UltraTech’s digital ecosystem.`,
         roleList: [
-          "Developed responsive UI components using Next.js and Tailwind CSS.",
-          "Built responsive UI components using React.js and Bootstrap CSS for the Admin Panel.",
-          "Integrated RESTful APIs to fetch and display real-time booking data.",
-          "Collaborated with the backend team to define API contracts.",
-          "Implemented authentication and role-based access control.",
-          "Conducted code reviews and optimized application performance.",
+          "Developed responsive UIs using React.js and Next.js.",
+          "Built reusable components and implemented form validations.",
+          "Implemented role-based access control and dynamic data rendering.",
+          "Worked on modules such as Admin Panel, Partner Portal, One Technical Web, and BPD Dashboard.",
+          "Collaborated via Agile methodology using JIRA Epics, stories, and sprints.",
         ],
       },
       technologiesUsed: [
         "Next.js",
         "React.js",
+        "Redux Toolkit",
+        "Bootstrap CSS",
         "Tailwind CSS",
         "Node.js",
-        "Express.js",
         "MySQL",
-        "JWT",
-        "REST APIs",
         "AWS",
+        "JIRA",
       ],
       features: [
-        "User registration and authentication with JWT.",
+        "User registration and authentication with role-based control.",
         "Social media–style feed for dealer updates and announcements.",
         "Booking system with calendar view and status tracking.",
-        "Role-based dashboards for dealers and customers.",
-        "Real-time notifications via WebSocket.",
+        "Role-based dashboards for dealers, partners, and customers.",
+        "Real-time notifications and activity tracking.",
         "Admin panel for managing users and content.",
       ],
       challengesAndSolutions: [
         {
           challenge:
-            "Handling real-time updates without overloading the server.",
+            "Maintaining consistent design across multiple modules (Admin, Partner Portal, Kiosk, etc.)",
           solution:
-            "Implemented WebSocket with throttling to optimize data flow.",
+            "Created reusable UI components and followed strict design guidelines.",
         },
         {
-          challenge: "Ensuring smooth, responsive design across devices.",
+          challenge: "Handling real-time updates without server overload.",
           solution:
-            "Utilized Tailwind CSS utility classes in combination with media queries.",
+            "Used WebSockets with throttling and efficient state management.",
         },
       ],
       keyLearnings: [
-        "Deepened expertise in Next.js.",
-        "Gained experience integrating real-time features with WebSocket.",
-        "Enhanced collaboration skills while working with cross-functional teams.",
+        "Deepened expertise in Next.js and Redux Toolkit.",
+        "Learned to work across multiple interconnected applications under a single ecosystem.",
+        "Gained strong collaboration experience via Agile methodology.",
       ],
       projectScreenshots: [
         "/images/askUtec/dashboard.png",
         "/images/askUtec/booking.png",
         "/images/askUtec/profile.png",
       ],
-      repoInfo: {
-        // gitHubOwner: "apni-coding",
-        // repoName: "vivek-portfolio",
-        // branchName: "main"
-      },
+      repoInfo: {},
       liveDemoLink: "https://utecbyultratech.com/",
-      conclusion: `The platform successfully improved communication and booking efficiency between dealers and customers, leading to a 30% increase in booking speed and receiving highly positive client feedback.`,
+      conclusion: `The platform improved dealer–customer engagement and booking speed significantly, with positive client feedback.`,
     },
   },
   {
@@ -327,31 +489,26 @@ export const PROJECT_LIST = [
     category: ["web", "iot"],
     projectInfo: {
       title: "Coolant Management System",
-      description: `An IoT-powered, role-based tracking dashboard enabling industries to monitor, manage, and analyze coolant usage, machine performance, and oil conditions in real time. The system streamlines operations, reduces downtime, and improves decision-making with advanced reporting and analytics.`,
+      description: `An IoT-powered, role-based tracking dashboard enabling industries to monitor, manage, and analyze coolant usage, machine performance, and oil conditions in real time.`,
       category: "IoT",
       client: "Manufacturing Plant Automation Division",
       detailedIntro: {
         heading:
           "Revolutionizing Coolant and Machine Oil Tracking with IoT and Real-Time Analytics",
-        paragraph1: `The Coolant Management System provides a centralized platform to manage companies, machines, and oils while tracking coolant levels, temperature, and quality across multiple machines. Real-time IoT sensors feed data to the cloud, enabling predictive maintenance, reduced wastage, and improved operational efficiency.`,
-        paragraph2: `With features like Excel exports, graph visualizations, custom filters, and dynamic forms, the dashboard empowers managers and technicians to make informed decisions, comply with safety regulations, and optimize resource usage. The responsive design ensures seamless accessibility on all devices.`,
+        paragraph1: `The Coolant Management System provides a centralized platform to manage companies, machines, and oils while tracking coolant levels, temperature, and quality across multiple machines.`,
+        paragraph2: `With Excel exports, graph visualizations, and responsive design, the system helps managers make informed decisions and optimize efficiency.`,
       },
       projectTimeline: {
         startDate: "July 2023",
-        endDate: "December 2023",
+        endDate: "Dec 2023",
       },
       roleAndResponsibilities: {
-        shortDescription: `I was the sole full-stack developer responsible for end-to-end development, from UI design to backend integration, ensuring a responsive and user-friendly experience.`,
+        shortDescription: `I was the sole developer, responsible for designing and implementing the frontend with React.js and backend integrations.`,
         roleList: [
-          "Built the frontend with React.js for managing companies, machines, and oils.",
+          "Built frontend with React.js for managing companies, machines, and oils.",
           "Developed dynamic forms for flexible data entry.",
-          "Integrated MQTT protocol for live IoT sensor data updates.",
-          "Implemented Excel export functionality for reports.",
-          "Added interactive graph visualizations using Chart.js.",
-          "Created backend APIs with Node.js and Express.js for data processing.",
-          "Implemented role-based access control for managers and technicians.",
-          "Optimized MongoDB queries for large datasets.",
-          "Ensured fully responsive UI/UX across devices.",
+          "Added Excel export functionality and graph visualizations.",
+          "Implemented responsive UI/UX for managers and technicians.",
         ],
       },
       technologiesUsed: [
@@ -359,35 +516,32 @@ export const PROJECT_LIST = [
         "Node.js",
         "Express.js",
         "MongoDB",
-        "MQTT",
         "Chart.js",
         "ExcelJS",
       ],
       features: [
-        "Real-time coolant level, temperature, and oil tracking.",
+        "Real-time coolant level and oil tracking.",
         "Company, machine, and oil management modules.",
-        "Predictive maintenance alerts via email and SMS.",
-        "Excel export for historical and filtered reports.",
-        "Graph visualizations for usage trends and analytics.",
+        "Excel export for reports.",
+        "Graph visualizations for usage trends.",
         "Role-based dashboards for managers and technicians.",
-        "Advanced filtering for machines, oils, and usage data.",
       ],
       challengesAndSolutions: [
         {
           challenge: "Processing large volumes of IoT data without latency.",
           solution:
-            "Used MQTT with lightweight payloads and optimized backend aggregation queries.",
+            "Optimized backend queries and used efficient data handling.",
         },
         {
-          challenge: "Ensuring accurate data from remote IoT devices.",
+          challenge: "Ensuring accurate reporting with multiple datasets.",
           solution:
-            "Implemented checksum verification and retry logic for device communication.",
+            "Implemented validation and aggregation logic at the backend.",
         },
       ],
       keyLearnings: [
-        "Hands-on experience with MQTT and IoT device integration.",
-        "Learned to optimize dashboards for high-volume, real-time data.",
-        "Improved backend aggregation and reporting for industrial IoT applications.",
+        "Hands-on experience with IoT dashboards.",
+        "Learned to build scalable visualizations with Chart.js.",
+        "Improved skills in responsive frontend design.",
       ],
       projectScreenshots: [
         "/images/coolant/dashboard.png",
@@ -395,7 +549,7 @@ export const PROJECT_LIST = [
       ],
       repoLink: "https://github.com/yourusername/coolant-management",
       liveDemoLink: "#",
-      conclusion: `This system reduced coolant wastage by 25% and improved predictive maintenance accuracy by 40%, significantly lowering operational costs and enhancing plant efficiency.`,
+      conclusion: `This system reduced coolant wastage and improved predictive maintenance, lowering operational costs.`,
     },
   },
   {
@@ -407,66 +561,58 @@ export const PROJECT_LIST = [
     category: ["mobile", "healthcare"],
     projectInfo: {
       title: "OKU Mobile App",
-      description: `A mobile healthcare platform that uses AI to provide personalized wellness and medical recommendations to users based on their health data and lifestyle patterns.`,
-      category: "healthcare",
+      description: `A mobile healthcare platform that uses AI to provide personalized wellness and medical recommendations.`,
+      category: "Healthcare",
       client: "HealthTech Innovations",
       detailedIntro: {
         heading: "AI-Powered Personalized Healthcare in Your Pocket",
-        paragraph1: `OKU is designed to be a personal health companion, offering tailored health advice, medication reminders, and activity tracking. Leveraging AI algorithms, the app analyzes user data to provide actionable wellness recommendations.`,
-        paragraph2: `The app integrates seamlessly with wearable devices, enabling real-time health monitoring and connecting users to healthcare professionals for remote consultations.`,
+        paragraph1: `OKU is designed to be a personal health companion, offering tailored health advice, reminders, and activity tracking.`,
+        paragraph2: `The app integrates with wearable devices, enabling real-time health monitoring and connecting users to healthcare professionals.`,
       },
       projectTimeline: {
         startDate: "March 2024",
-        endDate: "August 2024",
+        endDate: "Aug 2024",
       },
       roleAndResponsibilities: {
-        shortDescription: `I served as the Node.js backend developer, building secure and scalable REST APIs using AWS Lambda and MongoDB.`,
+        shortDescription: `I developed the backend using AWS Lambda and TypeScript with MySQL integration.`,
         roleList: [
-          "Designed and implemented RESTful APIs to support mobile app functionalities.",
-          "Developed AWS Lambda functions for serverless backend operations.",
-          "Integrated AI-based recommendation engine with API endpoints.",
-          "Implemented authentication and authorization using JWT.",
-          "Connected backend with wearable device data through third-party APIs.",
-          "Ensured HIPAA compliance and secure storage of sensitive health data.",
-          "Optimized database queries and indexing in MongoDB for fast response times.",
+          "Built secure backend APIs with AWS Lambda.",
+          "Integrated MySQL for structured data storage.",
+          "Implemented authentication via AWS Cognito.",
+          "Collaborated with UI/UX and mobile developers for smooth delivery.",
         ],
       },
       technologiesUsed: [
         "Node.js",
         "Express.js",
-        "MongoDB",
+        "TypeScript",
+        "MySQL",
         "AWS Lambda",
-        "API Gateway",
-        "TensorFlow.js",
-        "JWT",
+        "Cognito",
         "S3",
       ],
       features: [
         "AI-driven health and wellness recommendations.",
-        "Integration with wearable devices and fitness trackers.",
+        "Integration with wearable devices.",
         "Secure authentication and user management.",
-        "Medication and activity tracking APIs.",
-        "Video consultation scheduling APIs.",
-        "Encrypted storage for sensitive health records.",
+        "Activity and medication tracking.",
       ],
       challengesAndSolutions: [
         {
-          challenge:
-            "Handling sensitive health data securely in compliance with HIPAA.",
+          challenge: "Handling sensitive health data securely.",
           solution:
-            "Implemented end-to-end encryption, secured API Gateway endpoints, and used encrypted MongoDB storage.",
+            "Implemented Cognito authentication and encrypted storage with MySQL and S3.",
         },
         {
-          challenge:
-            "Ensuring real-time synchronization with wearable device data.",
+          challenge: "Ensuring real-time sync with wearables.",
           solution:
-            "Built optimized AWS Lambda functions with event-driven architecture to handle frequent updates efficiently.",
+            "Built optimized Lambda functions with event-driven triggers.",
         },
       ],
       keyLearnings: [
-        "Gained in-depth experience in serverless architecture with AWS Lambda.",
-        "Enhanced skills in designing secure APIs for healthcare applications.",
-        "Learned to integrate AI-driven features within backend services.",
+        "Hands-on experience with AWS Lambda and Cognito.",
+        "Strengthened backend development with TypeScript and MySQL.",
+        "Learned healthcare compliance requirements.",
       ],
       projectScreenshots: [
         "/images/oku/dashboard.png",
@@ -474,7 +620,7 @@ export const PROJECT_LIST = [
       ],
       repoLink: "https://github.com/yourusername/oku-app",
       liveDemoLink: "https://www.oku-app.com/",
-      conclusion: `The backend successfully powered an AI-driven healthcare app, ensuring secure and scalable operations, resulting in a 45% increase in user engagement and highly positive feedback from healthcare providers.`,
+      conclusion: `The backend ensured secure, scalable operations, improving engagement and feedback from healthcare providers.`,
     },
   },
   {

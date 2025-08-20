@@ -9,9 +9,9 @@ export default function ServiceCard({ item }) {
           <div className="services__card--content">
             <h3 className="services__card--title mb-15">{item?.heading}</h3>
             <p className="services__card--desc mb-20">{item?.description}</p>
-            <a className={`services__card--link ${item?.class}`} href="#">
+            {/* <a className={`services__card--link ${item?.class}`} href="#">
               Read More
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

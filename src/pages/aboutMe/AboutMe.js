@@ -3,9 +3,10 @@ import "./aboutMe.scss";
 import about from "../../assets/img/other/about.png";
 import { calculateTotalExperience } from "../../utils/commonFunction";
 import DetailPageHeader from "../header/DetailPageHeader";
+import { Link, useNavigate } from "react-router-dom";
+import { routeConstants } from "../../constants/routeConstant";
 export default function AboutMe({ isHomePage }) {
-  const totalExperience = calculateTotalExperience("2023-08-16", true);
-
+  const totalExperience = calculateTotalExperience("2023-08-16", true)-1;
   return (
     <>
       {!isHomePage && (
@@ -56,9 +57,9 @@ export default function AboutMe({ isHomePage }) {
                     Email: vivek7292932052@gmail.com
                   </li>
                 </ul>
-                <a className="about__btn primary__btn" href="#">
+                <Link className="about__btn primary__btn" to={routeConstants.CONTACT_US}>
                   Hire Me
-                </a>
+                </Link>
               </div>
             </div>
             <div className="about__thumbnail">

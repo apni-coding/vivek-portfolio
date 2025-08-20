@@ -22,7 +22,7 @@ export default function Home() {
   },[])
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main className="main__content_wrapper">
         <Hero isHomePage={true} />
         <Service isHomePage={true} />
