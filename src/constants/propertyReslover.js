@@ -2,7 +2,7 @@ import okuBg from "../assets/img/other/oku.png";
 import askUtecBg from "../assets/img/other/askutec.jpg";
 
 export const CV_URL =
-  "https://drive.google.com/file/d/1xCxwj7C-KF1PIBAaEwhxz0f5RUCNyOhT/view?usp=sharing";
+  "https://raw.githubusercontent.com/apni-coding/vivek-s-resume/main/vivek%27s%20resume.pdf";
 
 export const SOCIAL_MEDIA_LINKS = {
   YOUTUBE: "https://www.youtube.com/channel/UCeFHr8q8fDrgQt4d3EFEKIw",
