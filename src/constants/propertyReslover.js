@@ -2,8 +2,7 @@ import okuBg from "../assets/img/other/oku.png";
 import askUtecBg from "../assets/img/other/askutec.jpg";
 
 export const CV_URL =
-  "https://raw.githubusercontent.com/apni-coding/vivek-s-resume/main/vivek%27s%20resume.pdf";
-
+  "https://raw.githubusercontent.com/apni-coding/vivek-s-resume/main/Vivek_Kumar_Full_Stack_Developer_React_Node_NextJS_Resume.pdf";
 export const SOCIAL_MEDIA_LINKS = {
   YOUTUBE: "https://www.youtube.com/channel/UCeFHr8q8fDrgQt4d3EFEKIw",
   LINKEDIN: "https://www.linkedin.com/in/vivek-kumar-b48165258/",
