@@ -1,13 +1,15 @@
 import React from "react";
 import "./footer.scss";
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       <footer className="footer footer__section footer__bg">
         <div className="container">
           <div className="main__footer d-flex justify-content-between align-items-center">
             <p className="copyright__content mb-0">
-              Copyright © 2025 <span></span> by{" "}
+              Copyright © {currentYear} <span></span> by{" "}
               <span>
                 <a
                   className="text__secondary"

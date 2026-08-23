@@ -23,5 +23,5 @@ export function calculateTotalExperience(joiningDate, yearOnly) {
       : Math.floor(totalYearsFloat) + 1;
   }
 
-  return `${years} years ${months} months`;
+  return `${years} years ${months+1} months`;
 }

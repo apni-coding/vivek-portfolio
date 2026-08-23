@@ -15,14 +15,31 @@ export default function Hero() {
             <div className="hero__thumbnail position__relative">
               <img
                 className="hero__thumbnail--media light_img"
-                src={require("../../assets/img/hero/hero-thumbnail.png")}
+                src={require("../../assets/img/hero/myphotobg.png")}
                 alt="img"
-                style={{opacity:"0.8"}}
+                style={{
+                  opacity: 0.8,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "top center",
+                  maskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                }}
               />
+
               <img
                 className="hero__thumbnail--media dark_img"
-                src={require("../../assets/img/hero/hero-thumbnail.png")}
+                src={require("../../assets/img/hero/myphotobg.png")}
                 alt="img"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "top center",
+                  maskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 82%, transparent 100%)",
+                }}
               />
               <div className="projects__budget d-flex align-items-center">
                 <span className="projects__budget--icon">
