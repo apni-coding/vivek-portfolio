@@ -1,26 +1,268 @@
 @import "tailwindcss";
 
+/* Class-based dark mode for next-themes */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* -------------------------------------------------------------------------- */
+/* Semantic design tokens — matched to portfolio reference                    */
+/* -------------------------------------------------------------------------- */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces — intentional light palette (cool slate, not inverted dark) */
+  --background: #f5f7fc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --border: #e2e8f0;
+  --muted: #eef2f7;
+  --muted-foreground: #64748b;
+
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #a855f7;
+  --secondary-foreground: #ffffff;
+  --accent: #06b6d4;
+  --accent-foreground: #ffffff;
+
+  --success: #10b981;
+  --success-foreground: #ecfdf5;
+  --warning: #f59e0b;
+  --warning-foreground: #fffbeb;
+  --error: #ef4444;
+  --error-foreground: #fef2f2;
+
+  --ring: #3b82f6;
+  --glow: rgb(59 130 246 / 0.14);
+  --glow-secondary: rgb(168 85 247 / 0.12);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-accent: rgb(59 130 246 / 0.08);
+  --overlay: rgb(15 23 42 / 0.4);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1rem;
+}
+
+.dark {
+  /* Deep charcoal / near-black navy from reference */
+  --background: #030712;
+  --foreground: #f8fafc;
+  --surface: #0a0f1c;
+  --card: rgb(15 23 42 / 0.55);
+  --card-foreground: #f8fafc;
+
+  --border: #1e293b;
+  --muted: #111827;
+  --muted-foreground: #94a3b8;
+
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #a855f7;
+  --secondary-foreground: #ffffff;
+  --accent: #22d3ee;
+  --accent-foreground: #082f49;
+
+  --success: #34d399;
+  --success-foreground: #022c22;
+  --warning: #fbbf24;
+  --warning-foreground: #422006;
+  --error: #f87171;
+  --error-foreground: #450a0a;
+
+  --ring: #60a5fa;
+  --glow: rgb(59 130 246 / 0.28);
+  --glow-secondary: rgb(168 85 247 / 0.22);
+  --sidebar: #050816;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-border: #1e293b;
+  --sidebar-accent: rgb(59 130 246 / 0.14);
+  --overlay: rgb(2 6 23 / 0.72);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-ring: var(--ring);
+  --color-glow: var(--glow);
+  --color-glow-secondary: var(--glow-secondary);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-overlay: var(--overlay);
+
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --text-display: clamp(2.5rem, 5vw, 3.75rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.04em;
+  --text-display--font-weight: 700;
+  --text-h1: clamp(1.75rem, 3vw, 2.25rem);
+  --text-h1--line-height: 1.15;
+  --text-h1--letter-spacing: -0.03em;
+  --text-h1--font-weight: 700;
+  --text-h2: 1.375rem;
+  --text-h2--line-height: 1.3;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 600;
+  --text-h3: 1.0625rem;
+  --text-h3--line-height: 1.4;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.7;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.55;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-nav: 0.875rem;
+  --text-nav--line-height: 1.25;
+  --text-nav--font-weight: 500;
+  --text-code: 0.8125rem;
+  --text-code--line-height: 1.6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* -------------------------------------------------------------------------- */
+/* Base                                                                       */
+/* -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--primary) 40%, transparent);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+body,
+.theme-transition {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+/* Reference ambient: soft blue/purple spotlights on deep charcoal */
+.app-ambient {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(
+      ellipse 70% 55% at 18% -8%,
+      var(--glow),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 88% 8%,
+      var(--glow-secondary),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 70% 40%,
+      color-mix(in srgb, var(--secondary) 8%, transparent),
+      transparent 70%
+    );
+  background-attachment: fixed;
+}
+
+.text-gradient-brand {
+  background-image: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--muted-foreground) 35%, transparent)
+    transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--muted-foreground) 30%, transparent);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--muted-foreground) 50%, transparent);
 }
