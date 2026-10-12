@@ -220,7 +220,7 @@ export default function Header() {
           toggle={toggle}
           isDownload={true}
           title={"CV View"}
-          fileUrl= "https://apni-coding.github.io/vivek-s-resume/vivek%27s%20resume.pdf"
+          fileUrl= "https://apni-coding.github.io/vivek-s-resume/resume.pdf"
           isIframeShow={true}
         />
       )}
